@@ -1,0 +1,670 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{supertabular}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+
+\usepackage{hyperref}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{GomMold\\
+{\small An AI-based Application for Mold Detection and Prevention}
+}
+
+\author{\IEEEauthorblockN{Aina Nur Insyeerah \\ Binti Abd Rahman}
+\IEEEauthorblockA{\textit{dept. Information Systems} \\
+\textit{Hanyang University}\\
+Seoul, Republic of Korea \\
+insyeerahaina@gmail.com}
+\and
+\IEEEauthorblockN{Nur Ain Syafiqah \\ Binti Rahiman}
+\IEEEauthorblockA{\textit{dept. Information Systems} \\
+\textit{Hanyang University}\\
+Seoul, Republic of Korea \\
+nurainsyafiqah0907@gmail.com}
+\footnotesize
+\and
+\IEEEauthorblockN{Nur Shaqeerah \\ Binti Shamsul Anuar}
+\IEEEauthorblockA{\textit{dept. Information Systems} \\
+\textit{Hanyang University}\\
+Seoul, Republic of Korea \\
+shaqeerahshamsul@gmail.com}
+\and
+\IEEEauthorblockN{Yumni Karmila \\ Binti Yunus}
+\IEEEauthorblockA{\textit{dept. Information Systems} \\
+\textit{Hanyang University}\\
+Seoul, Republic of Korea \\
+yumnikarmila@gmail.com}
+}
+
+\maketitle
+\begin{abstract}
+Mold growth is a common but often overlooked problem in humid environments, leading to health risks, unpleasant odors, and structural damage in homes. GomMold is an application that introduces an AI-powered system to detect and prevent household mold that enables users to identify mold through photos. Traditional mold testing methods that rely on manual visual inspection are often time-consuming, subjective, and prone to error. By utilizing advancements in artificial intelligence (AI) and machine learning, this project applies computer vision and pattern recognition techniques to automate mold detection with high precision.
+
+\newline The system integrates AI-driven image analysis and conversational feedback to provide users with accurate detection, and practical cleaning and prevention advice. In the future, there is potential for GomMold to be integrated into smart home devices such as humidifiers or air purifiers for automated humidity control and prevention advice.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Mold detection, indoor air quality, computer vision, deep learning, environmental monitoring, AI health technology, image classification, preventive maintenance
+\end{IEEEkeywords}
+
+\section{Role Assignment}
+The distribution of project roles is summarized in Table 1 to optimize workflow within a small team.  
+
+\begin{table}[h]
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{p{1.3cm} l p{3.2cm}} \hline
+Roles & Name & Task description \& etc.\\ \hline
+User & Nur Ain Syafiqah & 
+The primary role is to experience and validate the AI mold detection model on application from a non-experts' perspective. Also, play the role to define real-world user scenarios by detecting and inspecting mold on various surfaces such as walls, furniture, and bathrooms.\\
+AI Developer & Nur Shaqeerah & Responsible for artificial intelligence mold detection from developing, training and optimizing the image recognition and classification model, to accurately detect and identify the mold from user-uploaded photos.\\
+
+\end{tabular}
+\end {table}
+
+\begin{table}[h]
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{p{1.3cm} l p{3.2cm}}
+Software developer & Aina Nur Insyeerah & Responsible for building the technical framework that supports the AI to integrate in this project from designing the frontend, backend system and database. \\
+Development manager & Yumni Karmila & Oversee and coordinate all aspects of the AI mold detection app’s development project. Additionally, responsible for timeline management, project planning and making sure the frontend, backend and AI integrate smoothly without any problems.  \\ 
+\hline
+\end{tabular}
+\end{table} 
+
+\section{Introduction}
+\subsection{Motivation}
+
+{\it Moving to South Korea as foreign students from Malaysia, one challenge that surprised us the most was not the food or the culture, it was the persistent spots of mold appearing in our homes. Especially during the summer season where it’s humid and raining all day long and in my case even during winter because of the condensation from the window dripped into my wallpaper, leaving it all wet. Unlike South Korea, we do not experience four seasons or drastic temperature changes in Malaysia. Additionally, house ventilation systems in South Korea also differ from those in Malaysia, which further affects how mold develops indoors. At first, we did not know whether these spots were actually mold or just dirt clumping up, as we were unfamiliar with it. It was only when the situation worsened that we realized that it was too late. If we had recognized that it was mold earlier, we could have prevented it from getting severe. We realized that we are not the only ones facing this problem. Students living in rented houses, poorly ventilated spares, and even long-term residents in Korea often struggle to identify mold growth. It is not just a lack of knowledge, many people, even those who have lived in Korea and experienced it for years, have difficulty recognizing mold in their homes.
+
+Our motivation for this project comes from this experience. We wanted to create a tool that helps anyone to detect and manage mold confidently. We aim to develop an app that is user-friendly and allows everyone to easily identify mold in their homes within seconds. By combining AI with accessible technology, we aim to simplify a problem that is often overlooked but can have serious health and structural consequences. With this project, users can identify whether it is mold from photos taken from their phones and receive clear cleaning advice all in one place. Our goal is not just to make mold detection easier, but to empower people to live in healthier, safer homes, turning an unfamiliar and potentially hazardous issue into something manageable and understandable. We are also motivated by the potential of AI technology to make this process intuitive and user-friendly. By leveraging the advanced features of AI, we can quickly identify mold, all without the need for professional tools or expertise. Through this project, we hope to demonstrate how AI can transform a common household problem into an easy, and intelligent solution, helping many people live safer and healthier lives}
+
+
+\subsection{Problem Statement}
+\begin{enumerate}
+\item Difficulty Identifying Mold 
+\item[] Many people struggle to identify mold in its early stages. Especially in apartments and studio housing, residents often notice dark patches on walls, ceilings, or bathrooms but are unsure whether these are mold, dirt, or just discoloration. Without accurate identification, the mold continues to spread, causing damage to the home and potential health issues such as allergies or respiratory irritation. There are currently not a lot of widely known simple and accessible tools for ordinary users to detect mold accurately using only their smartphone. \\
+\item Limited Access to Reliable Guidance  
+\item[] Even when mold is detected, many people are unsure how to handle it correctly, whether to clean it themselves, what cleaning agents to use, or when to seek professional intervention. Searching online often gives inconsistent or unreliable advice. This causes repeated mold problems and unnecessary expenses for cleaning services or repairs. \\
+\item Need for a Simple and Interactive Solution 
+\item[] Current mold prevention solutions are often hardware-centric and expensive, such as dehumidifiers or sensors, and a reactive approach, which is cleaning after mold appears. There is a gap in the market for a software-only solution that supports users in all stages: photo-based mold identification, and guidance via chatbot. A tool with AI-driven systems that combine all these features would be more affordable, easier to use, and could help reduce mold-related damage and health issues across many households. 
+\end{enumerate}
+
+\subsection{Research on Related Applications}
+\begin{enumerate}
+\item Mould Identifier: AI Scanner
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/fig1.png}
+    \caption{Mould Identifier: AI Scanner}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Mould Identifier is an AI-powered mobile application designed to facilitate easy detection and analysis of mold. By capturing or uploading a photo, the app identifies the mold type, confidence score, assesses associated risks, and provides safety guidance, including a percentage-based indication of severity, danger, exposure, and urgency. The application also features additional informational pages that offer detailed descriptions of different mold types and step-by-step usage guides for effective monitoring and prevention. A history log enables users to track past scans, while the user-friendly interface ensures effortless navigation and accessibility for casual users. \\
+
+\item Mold Identifier: AI Scan
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/fig2.png}
+    \caption{Mold Identifier: AI Scan}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Mold Identifier is an AI-powered application that detects mold and provides detailed information about the identified species. Upon opening the app, the camera interface launches automatically, allowing users to capture or upload an image for analysis. The AI recognizes the mold type and delivers comprehensive descriptions, including characteristics, typical habitats, and care information. \\
+
+\item Mold Finder AI, Inspection
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/fig3.png}
+    \caption{Mold Finder AI, Inspection}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Mold Finder AI provides a solution for detecting, analyzing, and understanding mold directly from a mobile device. Utilizing advanced AI technology, the app allows users to capture a photo or upload an existing image, after which it automatically identifies the mold type, analyzes the image, and specifies the location of the mold within the captured area, along with a confidence score. In addition to detection, the app delivers comprehensive analyses covering color, texture, health and safety risks, growth and spread patterns, and recommended remediation measures. \\
+
+\item Virtual Mold Inspection
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/fig4.png}
+    \caption{Virtual Mold Inspection}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Virtual Mold Inspection is an application platform that enables property owners or homeowners to schedule appointments with certified mold professionals for remote, real-time inspections. Users can select a convenient day and time, then conduct a video call through the app, during which the professional inspector guides the user in examining areas of concern, evaluates potential mold issues, and provides tailored advice on prevention and remediation. Unlike AI-based applications, this platform relies on human expertise rather than automated analysis, which may limit the speed and scalability of assistance. However, the involvement of trained professionals ensures higher accuracy in identifying mold presence and assessing associated risks. \\
+
+\item MoldAI
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Images/fig4.png}
+    \caption{MoldAI}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent MoldAI is an artificial intelligence–based mold detection application integrated with YCM hardware to provide real-time analysis of mold presence across various surfaces, including walls, shoes, fabrics, and industrial materials. The system incorporates a camera interface that guides users to align the target area within a designated box outline and set the shooting location to ensure consistent image capture. Upon taking or uploading an image, the AI model processes the visual data and classifies whether the area contains mold or not, delivering instant diagnostic feedback. The application also features a dashboard where users can review stored results and access a curated news section that links to external informational resources. However, the current implementation indicates that the detection functionality remains in a prototype phase, with limited real-time analytical performance. \\
+
+\end{enumerate}
+
+\section{Requirement Analysis}
+\begin{enumerate}
+    \item {\it Common Features}
+    \begin{enumerate}[label=(\alph*)]
+        \item {\bf Sign-Up and Log-In}
+            \begin{itemize}
+             \item Enter email: Used for login and account identification. 
+             \item Enter password: Must be at least six characters long for security.
+             \item Enter username: Used as the display name within the app. Once registered, users can log in using their email and password to access all AI-powered functionalities and save mold detection history. \\
+            \end{itemize}
+    \end{enumerate}
+     
+    \item {\it User Specific Features}
+        \begin{enumerate}[label=(\alph*)]
+        \item {\bf Mold Photo Detection} \\
+        Users can upload a photo or take a picture using their device's camera to check whether mold is present using AI image detection. The following are the information that will be displayed: 
+            \begin{itemize}
+             \item Detection Result 
+             \item Location (entered manually by the user for better customization) 
+             \item Timestamp
+            \end{itemize}
+        \item {\bf Home Dashboard (My Home):} \\
+        The main screen displays the history, chatbot icon, settings icon and camera icon.
+        \item {\bf History Log:} \\
+        The application maintains a detection history archive where users can review previous AI analysis results in a chronological list. The history displays the location and the previous uploaded photos with the results. 
+        \item {\bf AI Chatbot Assistant:} \\
+        The integrated chatbot allows users to ask more information on mold-related questions, such as “What specific products should I use to clean this?”. It leverages a simple NLP model to generate contextual, easy-to-understand advice and explanations.  
+        \item {\bf Settings:} \\
+        The Settings section includes User Profile and About GomMold. In the User Profile section, users can customize their username and change their password. In the About GomMold section, information about the application is provided.
+        \end{enumerate}
+\end{enumerate}
+
+\section{Software Development Platform}
+\subsection{Development Platform}
+    \begin{itemize}
+    \item MacOS \\
+    MacOS is the chosen and primary chosen development platform as it has software engineering operations like version control management and executing Python script for AI model training are made-easier by its robust UNIX-based interface. Moreover, it is perfect for creating and merging machine learning models due to its excellent support for AI frameworks like TensorFlow and PyTorch. Also, MacOS provides a reliable platform and smooth environment to unify the software engineering and AI components for this project.
+    \end{itemize}
+    \begin{itemize}
+    \item Windows \\
+    Windows is a popular and versatile operating system, which makes it a great platform for this project’s development. Windows user-friendly interface simplifies environment configuration and project management, while its robust community support ensures quick and fast. Moreover, this project may use dedicated GPUs for quicker model training because of its strong hardware support. In summary, Windows offers a complete and adaptable environment for creating GomMold application's cross-platform components.
+    \end{itemize}
+
+\subsection{Tools and Language}
+    \begin{itemize}
+        \item Dart \\
+        Dart is the programming language used by Flutter, developed and maintained by Google. It is a modern, object-oriented, and type-safe language designed for building fast, reliable, and visually appealing applications across multiple platforms such as Android, iOS, web, and desktop. Dart compiles to native code for mobile and desktop, which ensures smooth performance and quick UI rendering. In this project, Dart is used to develop the frontend mobile application, enabling interactive user experiences and seamless navigation between features such as photo upload, weather display, and AI-based mold detection results. Dart also acts as the bridge connecting the app to backend services, including Firebase for authentication and data storage, and the Flask API for AI model predictions and chatbot communication.\\
+        
+        \item Firebase \\
+        Firebase is a cloud-based Backend-as-a-Service (BaaS) platform developed by Google, offering essential backend tools such as authentication, cloud storage, real-time databases, and analytics. In this project, Firebase plays a central role in managing user accounts, detection history, and image storage. Firebase Authentication secures user registration and login, Cloud Firestore stores detection results and environmental data, and Firebase Storage maintains uploaded mold images. The platform’s scalability and integration with Flutter allow real-time synchronization between the user interface and backend, ensuring that users can access their analysis results and personalized recommendations instantly and securely. \\
+        
+        \item Flask \\
+        Flask is a lightweight and flexible Python-based micro web framework recognized for its simplicity, scalability, and adaptability in modern web development. Its minimalist architecture allows developers to integrate only essential components, promoting high customization, modularity, and efficient system design. Unlike larger frameworks such as Django, Flask offers greater control and faster performance due to its minimal abstraction layers, making it ideal for data-driven and AI-powered applications. In this project, Flask can be used to build RESTful APIs that connect the image analysis and conversational modules into a unified backend system. This implementation enables real-time data exchange, accurate risk assessment, and intelligent feedback, ensuring efficiency and scalability for future smart-home integrations. \\
+
+        \item Flutter \\
+        Flutter is an open-source UI software development toolkit created by Google for building visually appealing, cross-platform applications from a single codebase. Using the Dart language, it provides a reactive programming model and a rich collection of pre-designed widgets that allow rapid interface design and customization. Flutter’s hot reload feature supports instant code changes, improving developer productivity and testing efficiency. In this project, Flutter is used to develop the mobile application interface, allowing users to upload photos, view mold detection results, access weather-based risk analysis, and interact with the AI-powered chatbot. Its integration with Firebase and Flask API enables real-time updates and seamless data exchange. \\
+        
+        \item Google Cloud \\
+        Google Cloud is an infrastructure that enables developers to build, run, and manage applications efficiently by using computing services offered by Google, without the need to maintain physical servers. It is a robust cloud computing platform that provides secure, scalable, and intelligent services for computing, storage, data analytics, and AI. Its global infrastructure, flexible pricing, and advanced security make it an ideal platform for software development and innovation. With Google Cloud, application development and deployment are faster, more efficient, and scalable. Instead of investing in physical servers, this project utilize a cloud system due to its financial advantages and potential for future development. \\
+        
+        \item Javascript \\
+        JavaScript is a dynamic and event-driven programming language that enables interactive web functionality and seamless data communication between the client and server. Although it is not used directly in this project’s core development, JavaScript underpins Firebase’s SDKs and cloud functions, which facilitate real-time data synchronization between the mobile app and the backend. Through these SDKs, JavaScript enables secure and efficient operations for user authentication, data storage, and file management without requiring a custom backend. Its asynchronous capabilities allow the system to handle real-time updates such as saving detection results, retrieving history, or synchronizing user preferences, improving the overall responsiveness and scalability of the application. \\
+
+        \item Latex \\
+        LaTeX acts as the main tool for preparing this projects' technical documentation. It helps to format paperwork professionally and consistently by following the IEEE report structure accordingly. This project uses an online LaTeX editor like Overleaf to jointly prepare and compile the document within team members. Overleaf’s cloud-based platform enables real-time writing, editing, commenting and document review without version conflicts. Plus, it allows users to do automatic table of contents creation, referencing and also mathematical equations which enhance the user’s quality and readability of the report documentation. So, by using LaTeX in Overleaf, it helps the team to create and polish team project documentations and paperworks. \\
+        
+        \item OpenAI \\
+        OpenAI, founded in 2015, is a leading artificial intelligence research organization committed to ensuring that artificial general intelligence (AGI) benefits humanity through safe and accessible technologies. Its advanced models, such as GPT and DALL·E, provide powerful capabilities in natural language processing, computer vision, and deep learning, accessible via APIs for integration into applications. OpenAI is implemented in this project to combine image analysis, environmental data interpretation, and conversational feedback. Using the OpenAI API, the system can detect mold from images, assess risk based on weather and humidity data, and offer personalized cleaning and prevention advice through an interactive chatbot. \\
+        
+        \item Python \\ 
+        Python is a high-level, general-purpose programming language known for its simplicity and versatility. It is widely used for backend development, data analysis, machine learning, and automation. In this project, Python serves as the core backend and AI development language, handling the logic for image processing, machine learning, and integration with external APIs. The Flask web framework, written in Python, is used to build the backend API that connects the mobile application to the AI model. Python libraries such as PyTorch and OpenCV are employed for mold detection and image preprocessing, enabling the system to identify potential mold areas and generate predictions based on uploaded images. Additionally, Python facilitates communication with third-party services like OpenAI API for chatbot responses, ensuring that all intelligent features operate smoothly and efficiently within the backend ecosystem. \\
+        
+        \item Pytorch \\
+        PyTorch is one of the primary frameworks used in the development of this project’s AI model. It is a powerful open-source deep learning library that enables efficient training and deployment of neural networks using Python. PyTorch provides an intuitive and flexible platform for building and experimenting with modern AI architectures, including the YOLO model. Its dynamic computation graph allows developers to modify model behavior on the fly, making debugging and experimentation significantly easier. PyTorch’s ecosystem also integrates seamlessly with scientific computing tools and dataset workflows, supporting smooth model development, evaluation, and refinement. In this project, PyTorch plays a central role in training the mold detection model and exporting the final weight file used by the backend for real-time inference. \\
+    \end{itemize}
+
+\subsection{Software in Use}
+\begin{itemize}
+    \item Figma \\
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.27\columnwidth]{Images/fig6.png}
+    \caption{Figma}
+    \label{fig:enter-label}
+    \end{figure}
+    \item[] Figma is a collaborative online design and prototype tool for user interface (UI), user experience (UX), and digital products. It is one of the most popular tools in the design industry due to its on real-time collaboration. It allows multiple team members to work simultaneously. This is particularly advantageous for this project, as all team members can access and contribute to designs seamlessly. Figma enables users to see the prototype and test the app flow before any code is written. It also provides a dedicated workspace for developers to inspect design elements, extract assets, and translate the design directly into code. \\
+
+    \item Github
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/fig7.png}
+    \caption{Github}
+    \label{fig:enter-label}
+    \end{figure}
+    \item[] Github is the primary code management and version control in this project. It enables team members to work on code independently without overwriting each other’s work. Besides that, it allows to organize branches for different functionality, manage project repositories and as well as making sure all the code changes are recorded with commits. It also prevents data loss in the event of accidental deletion of local files by acting as a secure online backup. Vs code also integrates well with GitHub by offering effortless synchronization between code editing and version control. This project utilizes Github to ensure effective collaboration, accountability and transparency across all phases of the project's development’s. \\
+
+    \item Google Colab
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/fig12.png}
+    \caption{Google Colab}
+    \label{fig:enter-label}
+    \end{figure}
+    \item[] Google Colab serves as the primary model training environment for this project. It provides a cloud-based platform equipped with free GPU and TPU resources, enabling efficient training of the YOLO model without requiring high-performance hardware from team members. Colab offers a collaborative notebook interface that allows code, results, and experiments to be clearly documented and shared. This ensures that training workflows remain reproducible, organized, and easy to update as the dataset evolves. The integration with Google Drive also simplifies data management by enabling seamless loading, saving, and exporting of model weights such as the best.pt file. Through its accessibility, shared workspace features, and GPU-accelerated environment, Google Colab supports fast experimentation and consistent model development across the team. \\
+    
+    \item Notion \\
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/fig8.png}
+    \caption{Notion}
+    \label{fig:enter-label}
+    \end{figure}
+    \item[] Notion functions as the primary project management and collaboration platform for the team. It facilitates the organization’s task list,schedules, meeting notes and essential resources within a singular platform. Notion is used to allocate assignments, track the progress and make sure each team member is fully aware of their duties and timelines. Plus, it enables real-time editing and offers simultaneous visibility of updates made by one user to others. By this transparency, it minimizes communication gaps and helps to smoothen the coordination between frontend, backend and AI developer as well. Notion is essential for keeping team alignment and productivity during the development process. \\
+
+    \item Postman
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\columnwidth]{Images/fig11.png}
+    \caption{Postman}
+    \label{fig:enter-label}
+    \end{figure}
+    \item[] Postman is an open-source API development and testing tool that allows developers to send requests, analyze responses, and troubleshoot API efficiently. It supports various request types and includes features such as organizing endpoints and automated testing. In this project, Postman is used as the central platform for validating and testing all API interactions before they are integrated into the system. By using Postman as an API testing environment, this project ensures the backend functions correctly.\\
+    
+    \item Visual Studio Code
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/fig9.png}
+    \caption{Visual Studio Code}
+    \label{fig:enter-label}
+    \end{figure}
+    \item[] Visual Studio Code (VS Code) is a lightweight, open-source code editor developed by Microsoft. It supports multiple programming languages and includes features such as syntax highlighting, debugging, and a wide range of plugin extensions. This project uses VS Code as the main platform for all stages of code development. It serves as the central hub where both front-end and back-end code is written, tested, and managed before being deployed to the physical application. By using VS Code as the primary development environment, this project can seamlessly integrate all components, ensuring that the final project is well-organized and easily maintainable.
+    
+\end{itemize}
+
+\subsection{Team's Development Environment}
+
+\begin{table}[htp]
+ \centering
+ \setlength{\tabcolsep}{12pt}
+ \renewcommand{\arraystretch}{1.3}
+ \begin{tabular}{| >{\centering\arraybackslash}m{2.3cm} | >{\centering\arraybackslash}m{4cm} |}
+ \hline
+ {Name} & {Environment} \\ 
+ \hline
+
+ Aina Nur Insyeerah & 
+ \begin{tabular}[c]{@{}c@{}}
+ Macbook Air M4, 24GB \\ 
+ MacOS Tahoe 26.0.1 \\ 
+ Python 3.13.7
+ \end{tabular} \\ 
+ \hline
+
+ Nur Ain Syafiqah &
+ \begin{tabular}[c]{@{}c@{}}
+ Macbook Air M3, 24GB \\ 
+ MacOS Sequoia 15.6.1 \\ 
+ Python 3.9.6
+ \end{tabular} \\
+ \hline
+
+ Nur Shaqeerah &
+ \begin{tabular}[c]{@{}c@{}}
+ Macbook Air M1, 8GB \\ 
+ MacOS Sequoia 15.6.1 \\ 
+ Python 3.13.7
+ \end{tabular} \\
+ \hline
+ 
+ \end{tabular}
+\end{table}
+
+\begin{table}[htp]
+ \centering
+ \setlength{\tabcolsep}{12pt}
+ \renewcommand{\arraystretch}{1.3}
+ \begin{tabular}{| >{\centering\arraybackslash}m{2.3cm} | >{\centering\arraybackslash}m{4cm} |}
+ \hline
+ Yumni Karmila &
+ \begin{tabular}[c]{@{}c@{}}
+ HP Pavillion 15, \\
+ 12th Gen Intel(R) Core(TM) \\
+ i7-1255U (1.70 GHz), 512GB, \\
+ 16 RAM, 2GB GPU, Python 3.10.18
+ \end{tabular} \\
+ \hline
+
+ \end{tabular}
+\end{table}
+
+\subsection{Cost Estimation}
+This project incurs no additional financial cost, as it relies entirely on open-source and free software. Development is carried out using personal laptops, eliminating hardware expenses. Additionally, the project takes advantage of cloud services, such as computing and storage resources, which provide scalable and flexible infrastructure without extra cost.
+
+\subsection{Task Distribution}
+\begin{table}[h]
+\centering
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{1cm}|p{1.5cm}|p{4cm}|}
+\hline Tasks & Name & Descriptions\\ \hline
+Frontend Developer & Nur Ain Syafiqah, Yumni Karmila & Frontend developers build the user interface, manage interactivity, and integrate real-time data using Flutter and Dart. The first developer, the UI implementation Specialist transforms Figma designs into responsive mobile interfaces, handling navigation, animations, and Firebase authentication with focus on usability and performance. The second developer is the Data Integration and Visualization Specialist who connects the Flask backend with the frontend through APIs for mold detection, manages data visualizations, synchronization and collaborates with backend and AI teams for seamless functionality.\\
+\hline
+UI-UX Designer & Yumni Karmila & The UX Designer shapes the overall user experience and visual design of the app, ensuring accessibility, usability,and consistency. Using Figma, the designer create interface layouts, color schemes, typography, and user flows through wireframes and interactive prototypes. Usability testing is conducted to refine designs based on feedback and collaborate with frontend developers to ensure accurate visual implementation. The designer also maintains a design system for consistent branding.\\
+\hline
+AI Developer & Nur Shaqeerah & The AI Developer is responsible for deploying a YOLO-based machine learning model to detect and classify mold in real time. This includes collecting and preprocessing image data, training and fine-tuning the YOLO model in Google Colab using PyTorch for higher accuracy, and integrating the trained model into the app through Flask API endpoints for seamless communication between the AI, backend, and frontend. By leveraging YOLO’s real-time detection capabilities, this role ensures automated, scalable, and reliable mold recognition.\\
+\hline
+\end{tabular}
+\end{table}
+ 
+\begin{table}[h]
+\centering
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{1cm}|p{1.5cm}|p{4cm}|}
+\hline
+Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs the database, builds APIs, and ensures smooth data flow between the frontend, backend, and AI components. Using Python and Flask, the developer creates a robust server system that processes user data and delivers real-time responses. The role integrates external APIs, connects to cloud-based AI models using PyTorch, implements the OpenAI API for conversational features, and manages secure data storage with Firebase. The backend is deployed on Google Cloud for stable and optimized performance.\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Specifications}
+\subsection{Initial Page (Splash Screen)}
+\noindent The initial screen appears for a few seconds upon launching the application, serving as a splash page that introduces the GomMold brand and ensures all required system resources are initialized (e.g., Firebase, API connections).
+\begin{itemize}
+    \item {\it Process}
+    \begin{itemize}
+        \item The app loads core dependencies (Flask API endpoints, AI model, Firebase configurations).
+        \item Displays GomMold logo and animation for 3–5 seconds.
+        \item Automatically transitions to the Log-In Page once initialization completes.
+    \end{itemize}
+\item {\it System Response}
+    \begin{itemize}
+        \item Success: Redirects to Log-In Page.
+        \item Failure: Displays “Connection Error” message if backend initialization fails.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Log In}
+\noindent This page allows registered users to access their account using a valid email and password.
+    \begin{itemize}
+        \item Input Fields:
+        \begin{itemize}
+            \item Email: Used for account identification (case-insensitive).
+            \item Password: Must match with the securely hashed password stored in the database.
+        \end{itemize}
+        \item Buttons:
+        \begin{itemize}
+            \item Log In: Validates Credentials
+            \item Sign Up: Redirects to Sign Up page for new users.
+        \end{itemize}
+        \item Process Flow:
+        \begin{enumerate}
+            \item User enters login credentials
+            \item Upon pressing “Log In,” the frontend sends a POST /api/auth/login request to the Flask backend.
+            \item The backend checks if the email exists in the users collection in Firestore.
+            \item If found, it validates the password using check\_password\_hash.
+            \item On successful authentication, a JWT token (valid for 24 hours) is generated and returned to the app.
+            \item User is redirected to the Homepage.
+        \end{enumerate}
+\item {\it System Response}
+    \begin{itemize}
+        \item Success: Redirects to Homepage.
+        \item Failure: Displays "Invalid email or password."\\
+    \end{itemize}
+\end{itemize}
+
+\subsection{Sign Up}
+\noindent This page allows new users to register an account.
+    \begin{itemize}
+        \item Input Fields:
+        \begin{itemize}
+            \item Email: Must be unique in the database
+            \item Username: Must be unique in the database.
+            \item Password: Minimum of 5 characters.
+        \end{itemize}
+        \item Buttons:
+        \begin{itemize}
+            \item Sign Up: Registers new user.
+            \item Back to Log In: Returns to Log-In Page.
+        \end{itemize}
+        \item Process Flow:
+        \begin{enumerate}
+            \item User enters email, username, and password.
+            \item Frontend sends a POST /api/auth/signup request to Flask backend.
+            \item Backend checks if email or username already exist in the users collection.
+            \item If unique, the password is hashed using Werkzeug’s generate\_password\_hash() and stored securely.
+            \item Upon successful registration, a JWT token is generated and returned.
+            \item The user is redirected to the Log-In Page.
+        \end{enumerate}
+\item {\it System Response}
+    \begin{itemize}
+        \item Success: Displays “Registration successful. Please log in."
+        \item Failure: Displays one of the following:
+        \begin{itemize}
+            \item "Password too short."
+            \item "Email already exists."
+            \item “Username has been taken.”
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Homepage (Main Dashboard)}
+\noindent The Homepage serves as the user’s control center. It displays detection history and provides quick navigation to camera, chatbot, and settings.
+    \begin{itemize}
+        \item Display Elements:
+        \begin{itemize}
+            \item Top Section: Shows the current username.
+            \item Middle Section (History): Displays list of past detections:
+            \begin{itemize}
+                \item Location
+                \item Results (Mold / No Mold)
+            \end{itemize}
+        \end{itemize}
+        \item Buttons Navigation Bar:
+        \begin{itemize}
+            \item Settings Button (Left) – Opens Settings Page.
+            \item Camera Button (Center) – Opens Image Page.
+            \item Chatbot Button (Right) – Opens Chatbot Page.
+        \end{itemize}
+        \item Process Flow:
+        \begin{enumerate}
+            \item When the page loads, it sends GET /api/mold/history to the backend.
+            \item Backend retrieves the user’s history from the detections table and sends it to the frontend.
+            \item Backend checks if username exists in the users table.
+            \item Data is displayed in chronological order.
+        \end{enumerate}
+\item {\it System Response}
+    \begin{itemize}
+        \item Success: Displays recent detection history.
+        \item Displays “No detection history found.”\\
+    \end{itemize}
+\end{itemize}
+
+\subsection{Image Page}
+\noindent This page allows users to choose between capturing a photo or uploading one from their gallery for AI-based mold detection.
+    \begin{itemize}
+        \item Buttons:
+        \begin{itemize}
+            \item Take Photo: Opens real-time camera interface.
+            \item Choose from Gallery: Opens device’s photo picker.
+            \item Back: Returns to Homepage.
+        \end{itemize}
+        \item Process Flow:
+        \begin{enumerate}
+            \item When “Take Photo” is selected, app requests camera permission.
+            \item When “Choose from Gallery” is selected, app opens local gallery.
+            \item Once an image is chosen or captured, it navigates to the Identify Page.
+        \end{enumerate}
+\item {\it System Response}
+    \begin{itemize}
+        \item Success: Redirects to Identify Page with selected image.
+        \item Failure: Displays “Access to camera denied” if camera access is blocked.\\
+    \end{itemize}
+\end{itemize}
+
+\subsection{Identify Page (Mold Detection Page}
+\noindent The Identify Page runs the AI model to analyze mold images and display results directly on-screen.
+    \begin{itemize}
+        \item Buttons:
+        \begin{itemize}
+            \item Live Camera (if real-time photo)
+            \item Shoot Button
+            \item Back Button (to return to Image Page)
+            \item Result Display Area
+        \end{itemize}
+        \item Process Flow:
+        \begin{enumerate}
+            \item User takes or selects a photo.
+            \item The image is uploaded to the backend via POST /api/mold/detect.
+            \item Flask backend sends the image to the YOLO model (implemented using PyTorch + OpenCV).
+            \item The model detects mold type, confidence, and severity level.
+            \item Backend classifies risk as:
+            \begin{itemize}
+                \item Red Warning: Mold detected (displays mold type + safety advice).
+                \item Green Message: “You are safe” (no mold detected).
+            \end{itemize}
+            \item Backend stores the result in Firebase/SQL under the detections table.
+            \item Result is displayed instantly on the same page.
+        \end{enumerate}
+\item {\it System Response}
+    \begin{itemize}
+        \item Success: Displays detection result.
+        \item Failure: Displays “Image processing error.”
+    \end{itemize}
+\end{itemize}
+
+\subsection{Gallery Page}
+\noindent This page allows users to choose photos from their gallery to be analyzed by the AI model.
+    \begin{itemize}
+        \item Process Flow:
+        \begin{enumerate}
+            \item User selects “Choose from Gallery” from the Image Page.
+            \item App requests permission to access photos.
+            \item User selects image(s) → The image is sent to Identify Page for analysis.
+            \item Pressing “Back” returns to Image Page.
+            \item Backend classifies risk as:
+        \end{enumerate}
+\item {\it System Response}
+    \begin{itemize}
+        \item Redirects to Identify Page with chosen photo.
+        \item Displays “Access to gallery denied.”
+    \end{itemize}
+\end{itemize}
+
+\subsection{Chatbot Page}
+\noindent The chatbot allows users to interact with the AI assistant for mold-related questions and personalized advice.
+    \begin{itemize}
+        \item Components:
+        \begin{enumerate}
+            \item Initial AI message introducing itself.
+            \item 3 suggested questions (quick replies).
+            \item 1 “Ask Your Own Question” option.
+            \item Text input field and Send button.
+            \item “Back” button (returns to Homepage).
+        \end{enumerate}
+        \item Process Flow
+        \begin{enumerate}
+            \item Upon entering, the chatbot sends a greeting via backend API: GET /api/chatbot/start
+            \item User selects a suggested question or types a custom query.
+            \item Query is sent to backend: POST /api/chatbot/query
+            \item Backend forwards it to OpenAI API for NLP processing.
+            \item AI generates contextual responses and returns them to the app.
+        \end{enumerate}
+\item {\it System Response}
+    \begin{itemize}
+        \item Success: AI reply displayed in conversation format.
+        \item Failure: Displays “Chat service unavailable.”
+    \end{itemize}
+\end{itemize}
+
+\subsection{Settings Page}
+\noindent This page allows users to manage their profile information and view app details.
+    \begin{itemize}
+        \item Display Elements:
+        \begin{itemize}
+            \item Change Username Button
+            \item Change Password Button
+            \item About GomMold Section (App details, version info, developer credits)
+            \item Back Button: Returns to Homepage
+        \end{itemize}
+        \item Process Flow
+        \begin{enumerate}
+            \item When user clicks “Change Username” or “Change Password,” a form opens.
+            \item On submission, app sends a PATCH /api/users/update request.
+            \item Backend updates user data in the users table.
+            \item Updated info is synced with Firebase Authentication if applicable.
+        \end{enumerate}
+\item {\it System Response}
+    \begin{itemize}
+        \item Success: Displays “Profile updated successfully.”
+        \item Displays “Error updating profile.”
+    \end{itemize}
+\end{itemize}
+
+\section{Architecture page}
+\subsection{Overall Architecture}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Images/fig10.jpeg}
+    \caption{Application Architecture}
+    \label{fig:enter-label}
+\end{figure}
+
+The GomMold system architecture is organized into four primary modules: Frontend, Backend, Static Data Storage, and Machine Learning. The Frontend module, developed using Flutter, serves as the main interface through which users interact with the application. It provides functionalities such as image upload, history viewing, and chatbot communication. The user interface emphasizes accessibility and responsiveness, allowing users to capture or select images for analysis and manage their profile settings. The frontend collects user inputs and communicates with the backend through secure RESTful APIs, relying on the backend to perform all authentication, verification, and session handling.\\
+
+The Backend module, implemented using the Flask framework, functions as the central processing unit of the system, handling all communication between the frontend, machine learning model, and data storage components. It manages user authentication including sign up, login, token generation, and session validation, ensuring secure access across devices. The backend processes image inputs, executes AI model predictions, and returns results including mold detection and model confidence. It also incorporates the OpenAI API to power the chatbot, which provides general cleaning tips and mold prevention guidance based on user questions. For scalability and cloud integration, the backend is hosted on Google Cloud, ensuring high reliability and performance efficiency. Data is transmitted securely between modules using encrypted API endpoints, and all user information and image data are systematically stored and retrieved through integrated cloud databases.\\
+
+The Static Data Storage module is responsible for managing all user-generated and application-related data, including images, AI analysis results, and user profiles. Firebase Firestore and Google Cloud Storage are utilized to handle structured and unstructured data respectively, allowing for efficient retrieval and synchronization with backend services. This module ensures data persistence, supports image versioning, and maintains real-time updates between the application layers. \\
+
+The Machine Learning module serves as the core analytical engine of GomMold. Built using a YOLO-based deep learning model implemented in PyTorch, this module enables fast and reliable mold detection directly from user-uploaded images. The training dataset is prepared and annotated through Roboflow, then trained offline in Google Colab to generate a custom model optimized for real-world conditions. Once trained, the model is deployed within the Flask backend, where incoming images from the frontend are processed and evaluated by the YOLO model to determine the presence of mold along with the corresponding confidence levels. The detection output is then returned to the user through the mobile application. In addition to the detection system, GomMold integrates an optional chatbot powered by the OpenAI API, allowing users to ask follow-up questions and receive general cleaning tips or preventive guidance.\\
+
+Collectively, these modules form an integrated ecosystem that combines real-time image analysis and cloud-based data management to deliver an intelligent and user-centric solution for mold detection and prevention. The modular architecture ensures scalability, reliability, and interoperability, enabling GomMold to serve as both a practical application for everyday users and a research-oriented platform for further advancements in environmental health monitoring and AI-assisted household management.
+
+\begin{thebibliography}{00}
+\bibitem{b1} Alvi, F. (2025, January 17). Why you need to start learning opencv in 2025!. OpenCV. https://opencv.org/blog/learning-opencv/
+\bibitem{b2} Bergmann, D. (2025, October 23). What is machine learning?. IBM. https://www.ibm.com/think/topics/machine-learning
+\bibitem{b3} Bergmann, D., & Stryker, C. (2025, October 20). What is pytorch?. IBM. https://www.ibm.com/think/topics/pytorch
+\bibitem{b4} Build apps for any screen. Flutter. (n.d.). https://flutter.dev/
+\bibitem{b5} Fox, L. (2023, September 17). Why should you use Flask Framework for web development? Medium. https://medium.com/@lauren-fox/why-should-you-use-flask-framework-for-web-development-f5a7233e17a6
+\bibitem{b6} Flutter architectural overview. Flutter. (n.d.-b). https://docs.flutter.dev/resources/architectural-overview
+\bibitem{b7} Gillis, A. S. (2025, June 11). What is macos? - definition from whatis.com. WhatIs. https://www.techtarget.com/whatis/definition/Mac-OS
+\bibitem{b8} Google. (n.d.-a). Google cloud overview | get started. https://cloud.google.com/docs/overview
+\bibitem{b9} Google. (n.d.-b). Firebase. Google. https://firebase.google.com/
+\bibitem{b10} Google. (n.d.). Add the firebase admin SDK to your server. Google. https://firebase.google.com/docs/admin/setup
+\bibitem{b11} Holcombe, J. (2025, August 28). What is github? A beginner’s introduction to github. Kinsta®. https://kinsta.com/blog/what-is-github/
+\bibitem{b12} Hồng, H. N. (2025, May 26). What is openai? everything you need to know (2025 guide). Expert Software Development | Kaopiz Holdings. https://kaopiz.com/en/articles/what-is-openai/
+\bibitem{b13} Hot reload. Flutter. (n.d.-c). https://docs.flutter.dev/tools/hot-reload
+\bibitem{b14} Khan, S. (2025, October 17). Dart programming language: Top features and applications. Xavor Corporation. https://www.xavor.com/blog/dart-programming-language-features-and-applications/
+\bibitem{b15} Microsoft. (2021, November 3). Visual studio code - code editing. redefined. RSS. https://code.visualstudio.com/
+\bibitem{b16} Nguyen, A. (2025, May 5). Flask Framework: Why developers love it for web projects. Stepmedia Software. https://stepmediasoftware.com/blog/what-is-flask-used-for/
+\bibitem{b17} Notion. (n.d.). The all-in-one workspace for your notes, tasks, wikis, and databases. https://www.notion.so/index.html
+\bibitem{b18} Notion. (n.d.-a). The AI workspace that works for you. https://www.notion.so/notion/What-s-New-157765353f2c4705bd45474e5ba8b46c
+\bibitem{b19} OpenCV: Essential library for real-time AI Vision. viso.ai. (n.d.). https://viso.ai/computer-vision/opencv/
+\bibitem{b20} OpenCV tutorial: Unlock the power of Visual Data Processing | DataCamp. (n.d.-a). https://www.datacamp.com/tutorial/opencv-tutorial
+\bibitem{b21} Overleaf, online latex editor. Overleaf, Online LaTeX Editor. (n.d.). https://www.overleaf.com/
+\bibitem{b22} Patel, B., & Written by Bhaval Patel Bhaval Patel is a Director (Operations) at Space-O Technologies. He has 20+ years of experience helping startups and enterprises with custom software solutions to drive maximum results. Under his leadership. (2025, May 29). Top 10 benefits of using openai in web app development. Homepage. https://www.spaceotechnologies.com/blog/benefits-of-using-openai-web-app-development/
+\bibitem{b23}Postman. (n.d.). The world’s leading API platform. https://www.postman.com/ 
+\bibitem{b24} Pytorch. PyTorch. (n.d.). https://pytorch.org/
+\bibitem{b25} Safi, A. (n.d.). Understanding baas: A deep dive into Firebase vs. Supabase: Abdulkader Safi. Abdulkader Safi Profile Picture. https://abdulkadersafi.com/blog/understanding-baas-a-deep-dive-into-firebase-vs-supabase
+\bibitem{b26} Stevens, E. (2025, August 14). What is Figma - uses, benefits, and features. AND Academy. https://www.andacademy.com/resources/blog/graphic-design/what-is-figma/#:~:text=Dev%20Mode%3A%20A%20workspace%20to,to%20co%2Dcreate%20slide%20decks.
+\bibitem{b27} Team, B. E. (2021, September 9). An overview of firebase baas. Back4App Blog. https://blog.back4app.com/backend-as-a-service-firebase/
+\bibitem{b28} Top 10 benefits of using openai for web app development. (n.d.). https://arccusinc.com/blog/10-important-benefits-of-using-openai-in-web-app-development/
+\bibitem{b29} Welcome to flask¶. Welcome to Flask - Flask Documentation (3.1.x). (n.d.). https://flask.palletsprojects.com/en/stable/
+\bibitem{b30} What is macos? features, Benefits & Latest Version. ITarian Blog. (n.d.). https://www.itarian.com/blog/what-is-mac-os/
+\bibitem{b31} What is python? executive summary. Python.org. (n.d.). https://www.python.org/doc/essays/blurb/
+\bibitem{b32} What is windows?. What is Windows? | Digital Unite. (n.d.). https://www.digitalunite.com/technology-guides/computer-essentials/windows-10/what-windows
+\bibitem{b33} Windows operating system: Research starters: EBSCO research. (n.d.). https://www.ebsco.com/research-starters/computer-science/windows-operating-system
+\end{thebibliography}
+\vspace{12pt}
+
+\end{document}
