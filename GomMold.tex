@@ -379,6 +379,12 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 
 \section{Specifications}
 \subsection{Initial Page (Splash Screen)}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Initial page.png}
+    \caption{Initial page}
+    \label{fig:enter-label}
+    \end{figure}
 \noindent The initial screen appears for a few seconds upon launching the application, serving as a splash page that introduces the GomMold brand and ensures all required system resources are initialized (e.g., Firebase, API connections).
 \begin{itemize}
     \item {\it Process}
@@ -395,6 +401,12 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 \end{itemize}
 
 \subsection{Log In}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/LogIn Page.png}
+    \caption{Log In page}
+    \label{fig:enter-label}
+    \end{figure}
 \noindent This page allows registered users to access their account using a valid email and password.
     \begin{itemize}
         \item Input Fields:
@@ -424,6 +436,12 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 \end{itemize}
 
 \subsection{Sign Up}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Sign Up Page.png}
+    \caption{Sign Up page}
+    \label{fig:enter-label}
+    \end{figure}
 \noindent This page allows new users to register an account.
     \begin{itemize}
         \item Input Fields:
@@ -459,6 +477,12 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 \end{itemize}
 
 \subsection{Homepage (Main Dashboard)}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Homepage.png}
+    \caption{Homepage}
+    \label{fig:enter-label}
+    \end{figure}
 \noindent The Homepage serves as the user’s control center. It displays detection history and provides quick navigation to camera, chatbot, and settings.
     \begin{itemize}
         \item Display Elements:
@@ -491,6 +515,12 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 \end{itemize}
 
 \subsection{Image Page}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Identify page.png}
+    \caption{Image page}
+    \label{fig:enter-label}
+    \end{figure}
 \noindent This page allows users to choose between capturing a photo or uploading one from their gallery for AI-based mold detection.
     \begin{itemize}
         \item Buttons:
@@ -512,7 +542,23 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
     \end{itemize}
 \end{itemize}
 
-\subsection{Identify Page (Mold Detection Page}
+\subsection{Identify Page (Mold Detection Page)}
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Identify Page - Success Result (1).png}
+        \caption{Mold detected}
+        \label{fig:mold-detected}
+    \end{minipage}%
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Identify Page - Failed Result (1).png}
+        \caption{No mold detected}
+        \label{fig:no-mold}
+    \end{minipage}
+\end{figure}
+
 \noindent The Identify Page runs the AI model to analyze mold images and display results directly on-screen.
     \begin{itemize}
         \item Buttons:
@@ -526,8 +572,8 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
         \begin{enumerate}
             \item User takes or selects a photo.
             \item The image is uploaded to the backend via POST /api/mold/detect.
-            \item Flask backend sends the image to the YOLO model (implemented using PyTorch + OpenCV).
-            \item The model detects mold type, confidence, and severity level.
+            \item Flask backend sends the image to the YOLO model (implemented using PyTorch).
+            \item The model detects whether it is mold
             \item Backend classifies risk as:
             \begin{itemize}
                 \item Red Warning: Mold detected (displays mold type + safety advice).
@@ -543,25 +589,13 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
     \end{itemize}
 \end{itemize}
 
-\subsection{Gallery Page}
-\noindent This page allows users to choose photos from their gallery to be analyzed by the AI model.
-    \begin{itemize}
-        \item Process Flow:
-        \begin{enumerate}
-            \item User selects “Choose from Gallery” from the Image Page.
-            \item App requests permission to access photos.
-            \item User selects image(s) → The image is sent to Identify Page for analysis.
-            \item Pressing “Back” returns to Image Page.
-            \item Backend classifies risk as:
-        \end{enumerate}
-\item {\it System Response}
-    \begin{itemize}
-        \item Redirects to Identify Page with chosen photo.
-        \item Displays “Access to gallery denied.”
-    \end{itemize}
-\end{itemize}
-
 \subsection{Chatbot Page}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/ChatBot (1).png}
+    \caption{Chatbot page}
+    \label{fig:enter-label}
+    \end{figure}
 \noindent The chatbot allows users to interact with the AI assistant for mold-related questions and personalized advice.
     \begin{itemize}
         \item Components:
@@ -588,6 +622,12 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 \end{itemize}
 
 \subsection{Settings Page}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Settings.png}
+    \caption{Settings page}
+    \label{fig:enter-label}
+    \end{figure}
 \noindent This page allows users to manage their profile information and view app details.
     \begin{itemize}
         \item Display Elements:
