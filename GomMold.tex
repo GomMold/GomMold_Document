@@ -27,26 +27,26 @@
 \IEEEauthorblockA{\textit{dept. Information Systems} \\
 \textit{Hanyang University}\\
 Seoul, Republic of Korea \\
-insyeerahaina@gmail.com}
+syeera@hanyang.ac.kr}
 \and
 \IEEEauthorblockN{Nur Ain Syafiqah \\ Binti Rahiman}
 \IEEEauthorblockA{\textit{dept. Information Systems} \\
 \textit{Hanyang University}\\
 Seoul, Republic of Korea \\
-nurainsyafiqah0907@gmail.com}
+ainrahiman@hanyang.ac.kr}
 \footnotesize
 \and
 \IEEEauthorblockN{Nur Shaqeerah \\ Binti Shamsul Anuar}
 \IEEEauthorblockA{\textit{dept. Information Systems} \\
 \textit{Hanyang University}\\
 Seoul, Republic of Korea \\
-shaqeerahshamsul@gmail.com}
+qeerashamsul@hanyang.ac.kr}
 \and
 \IEEEauthorblockN{Yumni Karmila \\ Binti Yunus}
 \IEEEauthorblockA{\textit{dept. Information Systems} \\
 \textit{Hanyang University}\\
 Seoul, Republic of Korea \\
-yumnikarmila@gmail.com}
+yumnikarmila@hanyang.ac.kr}
 }
 
 \maketitle
@@ -148,7 +148,7 @@ Our motivation for this project comes from this experience. We wanted to create 
 \item MoldAI
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\linewidth]{Images/fig4.png}
+    \includegraphics[width=0.8\linewidth]{Images/fig5.png}
     \caption{MoldAI}
     \label{fig:enter-label}
 \end{figure}
@@ -214,9 +214,6 @@ Our motivation for this project comes from this experience. We wanted to create 
         \item Flutter \\
         Flutter is an open-source UI software development toolkit created by Google for building visually appealing, cross-platform applications from a single codebase. Using the Dart language, it provides a reactive programming model and a rich collection of pre-designed widgets that allow rapid interface design and customization. Flutter’s hot reload feature supports instant code changes, improving developer productivity and testing efficiency. In this project, Flutter is used to develop the mobile application interface, allowing users to upload photos, view mold detection results, access weather-based risk analysis, and interact with the AI-powered chatbot. Its integration with Firebase and Flask API enables real-time updates and seamless data exchange. \\
         
-        \item Google Cloud \\
-        Google Cloud is an infrastructure that enables developers to build, run, and manage applications efficiently by using computing services offered by Google, without the need to maintain physical servers. It is a robust cloud computing platform that provides secure, scalable, and intelligent services for computing, storage, data analytics, and AI. Its global infrastructure, flexible pricing, and advanced security make it an ideal platform for software development and innovation. With Google Cloud, application development and deployment are faster, more efficient, and scalable. Instead of investing in physical servers, this project utilize a cloud system due to its financial advantages and potential for future development. \\
-        
         \item Javascript \\
         JavaScript is a dynamic and event-driven programming language that enables interactive web functionality and seamless data communication between the client and server. Although it is not used directly in this project’s core development, JavaScript underpins Firebase’s SDKs and cloud functions, which facilitate real-time data synchronization between the mobile app and the backend. Through these SDKs, JavaScript enables secure and efficient operations for user authentication, data storage, and file management without requiring a custom backend. Its asynchronous capabilities allow the system to handle real-time updates such as saving detection results, retrieving history, or synchronizing user preferences, improving the overall responsiveness and scalability of the application. \\
 
@@ -224,13 +221,20 @@ Our motivation for this project comes from this experience. We wanted to create 
         LaTeX acts as the main tool for preparing this projects' technical documentation. It helps to format paperwork professionally and consistently by following the IEEE report structure accordingly. This project uses an online LaTeX editor like Overleaf to jointly prepare and compile the document within team members. Overleaf’s cloud-based platform enables real-time writing, editing, commenting and document review without version conflicts. Plus, it allows users to do automatic table of contents creation, referencing and also mathematical equations which enhance the user’s quality and readability of the report documentation. So, by using LaTeX in Overleaf, it helps the team to create and polish team project documentations and paperworks. \\
         
         \item OpenAI \\
-        OpenAI, founded in 2015, is a leading artificial intelligence research organization committed to ensuring that artificial general intelligence (AGI) benefits humanity through safe and accessible technologies. Its advanced models, such as GPT and DALL·E, provide powerful capabilities in natural language processing, computer vision, and deep learning, accessible via APIs for integration into applications. OpenAI is implemented in this project to combine image analysis, environmental data interpretation, and conversational feedback. Using the OpenAI API, the system can detect mold from images, assess risk based on weather and humidity data, and offer personalized cleaning and prevention advice through an interactive chatbot. \\
+        OpenAI, founded in 2015, is a leading artificial intelligence research organization dedicated to developing safe and beneficial AI technologies. Its advanced models, such as GPT and DALL·E, provide strong capabilities in natural language understanding and generation, which can be integrated into applications through APIs. In this project, OpenAI is used to power a simple conversational chatbot that assists users by answering mold-related questions and providing general information in a friendly and accessible way. \\
         
         \item Python \\ 
         Python is a high-level, general-purpose programming language known for its simplicity and versatility. It is widely used for backend development, data analysis, machine learning, and automation. In this project, Python serves as the core backend and AI development language, handling the logic for image processing, machine learning, and integration with external APIs. The Flask web framework, written in Python, is used to build the backend API that connects the mobile application to the AI model. Python libraries such as PyTorch and OpenCV are employed for mold detection and image preprocessing, enabling the system to identify potential mold areas and generate predictions based on uploaded images. Additionally, Python facilitates communication with third-party services like OpenAI API for chatbot responses, ensuring that all intelligent features operate smoothly and efficiently within the backend ecosystem. \\
         
         \item Pytorch \\
         PyTorch is one of the primary frameworks used in the development of this project’s AI model. It is a powerful open-source deep learning library that enables efficient training and deployment of neural networks using Python. PyTorch provides an intuitive and flexible platform for building and experimenting with modern AI architectures, including the YOLO model. Its dynamic computation graph allows developers to modify model behavior on the fly, making debugging and experimentation significantly easier. PyTorch’s ecosystem also integrates seamlessly with scientific computing tools and dataset workflows, supporting smooth model development, evaluation, and refinement. In this project, PyTorch plays a central role in training the mold detection model and exporting the final weight file used by the backend for real-time inference. \\
+
+        \item Railway \\
+        Railway is a modern cloud deployment platform that allows developers to run applications without managing complex server setups. It provides a simple interface for building, hosting, and scaling applications directly from a GitHub repository, using an automated Linux-based environment. Railway handles the runtime configuration, environment variables, and deployment process, making it much easier and faster compared to traditional cloud hosting. In this project, Railway is used to deploy the Flask backend that powers user authentication, image processing, and machine learning inference. It securely stores API keys, connects seamlessly with Firebase, and provides real-time logs to troubleshoot errors efficiently. By hosting the backend on Railway, the system achieves stable performance, quicker updates, and smooth communication with both the Flutter frontend and the OpenAI chatbot. \\
+
+        \item Roboflow \\
+        Roboflow is an essential tool used in this project for dataset creation, management, and preparation. It provides a powerful platform for organizing images, performing annotations, and generating high-quality training datasets for computer vision tasks. Roboflow offers automated preprocessing features such as image resizing, augmentation, and format conversion, which help improve model robustness and performance. Its intuitive web interface makes it easier to handle large and diverse image collections, especially for complex tasks like mold detection where consistent labeling is critical. By exporting datasets directly into formats compatible with YOLO, PyTorch, and ONNX workflows, Roboflow streamlines the entire dataset pipeline. In this project, Roboflow played an important role in curating, augmenting, and exporting the mold dataset, ensuring the model received clean and well-structured data for effective training.\\
+        
     \end{itemize}
 
 \subsection{Software in Use}
@@ -260,7 +264,7 @@ Our motivation for this project comes from this experience. We wanted to create 
     \caption{Google Colab}
     \label{fig:enter-label}
     \end{figure}
-    \item[] Google Colab serves as the primary model training environment for this project. It provides a cloud-based platform equipped with free GPU and TPU resources, enabling efficient training of the YOLO model without requiring high-performance hardware from team members. Colab offers a collaborative notebook interface that allows code, results, and experiments to be clearly documented and shared. This ensures that training workflows remain reproducible, organized, and easy to update as the dataset evolves. The integration with Google Drive also simplifies data management by enabling seamless loading, saving, and exporting of model weights such as the best.pt file. Through its accessibility, shared workspace features, and GPU-accelerated environment, Google Colab supports fast experimentation and consistent model development across the team. \\
+    \item[] Google Colab serves as the primary model training environment for this project. It provides a cloud-based platform equipped with free GPU and TPU resources, enabling efficient training of the YOLO model without requiring high-performance hardware from team members. Colab offers a collaborative notebook interface that allows code, results, and experiments to be clearly documented and shared. This ensures that training workflows remain reproducible, organized, and easy to update as the dataset evolves. The integration with Google Drive also simplifies data management by enabling seamless loading, saving, and exporting of model weights. Through its accessibility, shared workspace features, and GPU-accelerated environment, Google Colab supports fast experimentation and consistent model development. \\
     
     \item Notion \\
     \begin{figure}[h!]
@@ -325,16 +329,7 @@ Our motivation for this project comes from this experience. We wanted to create 
  Python 3.13.7
  \end{tabular} \\
  \hline
- 
- \end{tabular}
-\end{table}
 
-\begin{table}[htp]
- \centering
- \setlength{\tabcolsep}{12pt}
- \renewcommand{\arraystretch}{1.3}
- \begin{tabular}{| >{\centering\arraybackslash}m{2.3cm} | >{\centering\arraybackslash}m{4cm} |}
- \hline
  Yumni Karmila &
  \begin{tabular}[c]{@{}c@{}}
  HP Pavillion 15, \\
@@ -343,7 +338,7 @@ Our motivation for this project comes from this experience. We wanted to create 
  16 RAM, 2GB GPU, Python 3.10.18
  \end{tabular} \\
  \hline
-
+ 
  \end{tabular}
 \end{table}
 
@@ -351,6 +346,7 @@ Our motivation for this project comes from this experience. We wanted to create 
 This project incurs no additional financial cost, as it relies entirely on open-source and free software. Development is carried out using personal laptops, eliminating hardware expenses. Additionally, the project takes advantage of cloud services, such as computing and storage resources, which provide scalable and flexible infrastructure without extra cost.
 
 \subsection{Task Distribution}
+
 \begin{table}[h]
 \centering
 \setlength{\tabcolsep}{12pt}
@@ -359,23 +355,29 @@ This project incurs no additional financial cost, as it relies entirely on open-
 \hline Tasks & Name & Descriptions\\ \hline
 Frontend Developer & Nur Ain Syafiqah, Yumni Karmila & Frontend developers build the user interface, manage interactivity, and integrate real-time data using Flutter and Dart. The first developer, the UI implementation Specialist transforms Figma designs into responsive mobile interfaces, handling navigation, animations, and Firebase authentication with focus on usability and performance. The second developer is the Data Integration and Visualization Specialist who connects the Flask backend with the frontend through APIs for mold detection, manages data visualizations, synchronization and collaborates with backend and AI teams for seamless functionality.\\
 \hline
-UI-UX Designer & Yumni Karmila & The UX Designer shapes the overall user experience and visual design of the app, ensuring accessibility, usability,and consistency. Using Figma, the designer create interface layouts, color schemes, typography, and user flows through wireframes and interactive prototypes. Usability testing is conducted to refine designs based on feedback and collaborate with frontend developers to ensure accurate visual implementation. The designer also maintains a design system for consistent branding.\\
-\hline
-AI Developer & Nur Shaqeerah & The AI Developer is responsible for deploying a YOLO-based machine learning model to detect and classify mold in real time. This includes collecting and preprocessing image data, training and fine-tuning the YOLO model in Google Colab using PyTorch for higher accuracy, and integrating the trained model into the app through Flask API endpoints for seamless communication between the AI, backend, and frontend. By leveraging YOLO’s real-time detection capabilities, this role ensures automated, scalable, and reliable mold recognition.\\
+UI-UX Designer & Yumni Karmila & The UX Designer shapes the overall user experience and visual design of the app, ensuring accessibility, usability,and consistency. Using Figma, the designer create interface layouts, color schemes, typography, and user flows through wireframes and interactive prototypes. Usability testing is conducted to refine designs based on feedback and collaborate with frontend developers to ensure accurate visual implementation. The \\
 \hline
 \end{tabular}
 \end{table}
- 
+
 \begin{table}[h]
 \centering
 \setlength{\tabcolsep}{12pt}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|p{1cm}|p{1.5cm}|p{4cm}|}
 \hline
-Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs the database, builds APIs, and ensures smooth data flow between the frontend, backend, and AI components. Using Python and Flask, the developer creates a robust server system that processes user data and delivers real-time responses. The role integrates external APIs, connects to cloud-based AI models using PyTorch, implements the OpenAI API for conversational features, and manages secure data storage with Firebase. The backend is deployed on Google Cloud for stable and optimized performance.\\
+&& designer also maintains a design system for consistent branding.\\
 \hline
+AI Developer & Nur Shaqeerah & The AI Developer is responsible for deploying a YOLO-based machine learning model to detect and classify mold in real time. This includes collecting and preprocessing image data, training and fine-tuning the YOLO model in Google Colab using PyTorch for higher accuracy, and integrating the trained model into the app through Flask API endpoints for seamless communication between the AI, backend, and frontend. By leveraging YOLO’s real-time detection capabilities, this role ensures automated, scalable, and reliable mold recognition.\\
+\hline
+
+Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs the database, builds APIs, and ensures smooth data flow between the frontend, backend, and AI components. Using Python and Flask, the developer creates a robust server system that processes user data and returns real-time responses. The role integrates external APIs, uses an ONNX-based cloud model for mold detection, implements the OpenAI API for chatbot features, and manages secure data storage with Firebase. The backend is deployed on Railway to ensure stable, scalable, and efficient cloud performance. \\
+\hline
+
 \end{tabular}
 \end{table}
+
+ \newpage
 
 \section{Specifications}
 \subsection{Initial Page (Splash Screen)}
@@ -422,7 +424,7 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
         \item Process Flow:
         \begin{enumerate}
             \item User enters login credentials
-            \item Upon pressing “Log In,” the frontend sends a POST /api/auth/login request to the Flask backend.
+            \item Upon pressing “Log In,” the frontend sends a \texttt {POST /api/auth/login} request to the Flask backend.
             \item The backend checks if the email exists in the users collection in Firestore.
             \item If found, it validates the password using check\_password\_hash.
             \item On successful authentication, a JWT token (valid for 24 hours) is generated and returned to the app.
@@ -431,7 +433,7 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 \item {\it System Response}
     \begin{itemize}
         \item Success: Redirects to Homepage.
-        \item Failure: Displays "Invalid email or password."\\
+        \item Failure: Displays "Login failed. Try again."\\
     \end{itemize}
 \end{itemize}
 
@@ -448,7 +450,7 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
         \begin{itemize}
             \item Email: Must be unique in the database
             \item Username: Must be unique in the database.
-            \item Password: Minimum of 5 characters.
+            \item Password: Minimum of 6 characters.
         \end{itemize}
         \item Buttons:
         \begin{itemize}
@@ -458,7 +460,7 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
         \item Process Flow:
         \begin{enumerate}
             \item User enters email, username, and password.
-            \item Frontend sends a POST /api/auth/signup request to Flask backend.
+            \item Frontend sends a \texttt {POST /api/auth/signup} request to Flask backend.
             \item Backend checks if email or username already exist in the users collection.
             \item If unique, the password is hashed using Werkzeug’s generate\_password\_hash() and stored securely.
             \item Upon successful registration, a JWT token is generated and returned.
@@ -469,9 +471,8 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
         \item Success: Displays “Registration successful. Please log in."
         \item Failure: Displays one of the following:
         \begin{itemize}
-            \item "Password too short."
-            \item "Email already exists."
-            \item “Username has been taken.”
+            \item "Password must be at least 6 characters."
+            \item "Sign up failed. Try again."
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -487,7 +488,6 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
     \begin{itemize}
         \item Display Elements:
         \begin{itemize}
-            \item Top Section: Shows the current username.
             \item Middle Section (History): Displays list of past detections:
             \begin{itemize}
                 \item Location
@@ -502,7 +502,7 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
         \end{itemize}
         \item Process Flow:
         \begin{enumerate}
-            \item When the page loads, it sends GET /api/mold/history to the backend.
+            \item When the page loads, it sends \texttt {GET /api/mold/history} to the backend.
             \item Backend retrieves the user’s history from the detections table and sends it to the frontend.
             \item Backend checks if username exists in the users table.
             \item Data is displayed in chronological order.
@@ -533,7 +533,7 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
         \begin{enumerate}
             \item When “Take Photo” is selected, app requests camera permission.
             \item When “Choose from Gallery” is selected, app opens local gallery.
-            \item Once an image is chosen or captured, it navigates to the Identify Page.
+            \item Once an image is chosen or captured, it navigates to the Identify` Page.
         \end{enumerate}
 \item {\it System Response}
     \begin{itemize}
@@ -543,77 +543,88 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 \end{itemize}
 
 \subsection{Identify Page (Mold Detection Page)}
+
 \begin{figure}[h!]
     \centering
-    \begin{minipage}{0.35\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Images/Identify Page - Success Result (1).png}
-        \caption{Mold detected}
-        \label{fig:mold-detected}
-    \end{minipage}%
-    \begin{minipage}{0.35\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Images/Identify Page - Failed Result (1).png}
-        \caption{No mold detected}
-        \label{fig:no-mold}
-    \end{minipage}
+    \includegraphics[width=0.35\columnwidth]{Images/Identify Page - Success Result (1).png}
+    \includegraphics[width=0.35\columnwidth]{Images/Identify Page - Failed Result (1).png}
+    \caption{Mold Detection Page}
+    \label{fig:enter-label}
 \end{figure}
 
-\noindent The Identify Page runs the AI model to analyze mold images and display results directly on-screen.
+\noindent The Identify Page allows users to capture or upload an image and run mold detection using the backend AI model. 
+Results are displayed immediately with a color-coded status to indicate safety.
+
+\begin{itemize}
+    \item Buttons:
     \begin{itemize}
-        \item Buttons:
+        \item Live Camera (real-time capture)
+        \item Shoot Button
+        \item Back Button (returns to Image Page)
+        \item Result Display Area
+    \end{itemize}
+
+    \item Process Flow:
+    \begin{enumerate}
+        \item User takes or selects an image from the device.
+        \item The image is sent to the backend via 
+              \texttt{POST /api/mold/detect} along with the user's authentication token.
+        \item Flask receives the uploaded file, stores it in Firebase Storage, and generates a public image URL.
+        \item The backend temporarily saves the file and passes it into the ONNX model using \texttt{predict\_image()}.
+        \item The model outputs bounding boxes and confidence scores for potential mold.
+        \item Based on the filtered detections, the backend determines:
         \begin{itemize}
-            \item Live Camera (if real-time photo)
-            \item Shoot Button
-            \item Back Button (to return to Image Page)
-            \item Result Display Area
+            \item Red Warning – "Mold Detected" (if at least one prediction is above threshold)
+            \item Green Safe – "No Mold Detected" (if no valid detections are found)
         \end{itemize}
-        \item Process Flow:
-        \begin{enumerate}
-            \item User takes or selects a photo.
-            \item The image is uploaded to the backend via POST /api/mold/detect.
-            \item Flask backend sends the image to the YOLO model (implemented using PyTorch).
-            \item The model detects whether it is mold
-            \item Backend classifies risk as:
-            \begin{itemize}
-                \item Red Warning: Mold detected (displays mold type + safety advice).
-                \item Green Message: “You are safe” (no mold detected).
-            \end{itemize}
-            \item Backend stores the result in Firebase/SQL under the detections table.
-            \item Result is displayed instantly on the same page.
-        \end{enumerate}
-\item {\it System Response}
+        \item The backend saves the result, predictions, image URL, and timestamp into Firestore under the \texttt{detections} collection.
+        \item The JSON response is returned to the app, containing the result, prediction details, and timestamp.
+        \item The app displays the detection result instantly on the same page.
+    \end{enumerate}
+
+    \item \textbf{System Response}
     \begin{itemize}
-        \item Success: Displays detection result.
-        \item Failure: Displays “Image processing error.”
+        \item Success: Detection result is displayed with prediction data.
+        \item Failure: Shows ``Image processing error.''
     \end{itemize}
 \end{itemize}
+
 
 \subsection{Chatbot Page}
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.35\columnwidth]{Images/ChatBot (1).png}
+    \includegraphics[width=0.35\columnwidth]{Images/Chatbot.jpg}
     \caption{Chatbot page}
     \label{fig:enter-label}
     \end{figure}
-\noindent The chatbot allows users to interact with the AI assistant for mold-related questions and personalized advice.
+\noindent The chatbot allows users to interact with an AI assistant for mold-related questions and general information.
+
+\begin{itemize}
+
+    \item Components:
+    \begin{enumerate}
+        \item Initial AI message introducing itself.
+        \item Text input field and Send button.
+        \item “Back” button (returns to Homepage).
+    \end{enumerate}
+
+    \item Process Flow
+    \begin{enumerate}
+        \item Upon entering, the chatbot sends a greeting via backend API: \texttt{GET /api/chatbot/start}
+        \item User types a question into the chat input.
+        \item The query is sent to the backend: \texttt{POST /api/chatbot/query}
+        \item Backend forwards the message to the OpenAI API for language processing.
+        \item The AI generates a response and returns it to the app.
+    \end{enumerate}
+
+    \item \textit{System Response}
     \begin{itemize}
-        \item Components:
-        \begin{enumerate}
-            \item Initial AI message introducing itself.
-            \item 3 suggested questions (quick replies).
-            \item 1 “Ask Your Own Question” option.
-            \item Text input field and Send button.
-            \item “Back” button (returns to Homepage).
-        \end{enumerate}
-        \item Process Flow
-        \begin{enumerate}
-            \item Upon entering, the chatbot sends a greeting via backend API: GET /api/chatbot/start
-            \item User selects a suggested question or types a custom query.
-            \item Query is sent to backend: POST /api/chatbot/query
-            \item Backend forwards it to OpenAI API for NLP processing.
-            \item AI generates contextual responses and returns them to the app.
-        \end{enumerate}
+        \item Success: AI reply is displayed in a chat-style conversation.
+        \item Failure: Displays “Chat service unavailable.”
+    \end{itemize}
+
+\end{itemize}
+
 \item {\it System Response}
     \begin{itemize}
         \item Success: AI reply displayed in conversation format.
@@ -640,7 +651,7 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
         \item Process Flow
         \begin{enumerate}
             \item When user clicks “Change Username” or “Change Password,” a form opens.
-            \item On submission, app sends a PATCH /api/users/update request.
+            \item On submission, app sends a \texttt{PATCH /api/users/update} request.
             \item Backend updates user data in the users table.
             \item Updated info is synced with Firebase Authentication if applicable.
         \end{enumerate}
@@ -655,56 +666,1227 @@ Backend Developer & Aina Nur \newline Insyeerah & The Backend Developer designs 
 \subsection{Overall Architecture}
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1.0\linewidth]{Images/fig10.jpeg}
-    \caption{Application Architecture}
+    \includegraphics[width=1.0\linewidth]{Images/architecture diagram.png}
+        \caption{Application Architecture}
     \label{fig:enter-label}
 \end{figure}
 
-The GomMold system architecture is organized into four primary modules: Frontend, Backend, Static Data Storage, and Machine Learning. The Frontend module, developed using Flutter, serves as the main interface through which users interact with the application. It provides functionalities such as image upload, history viewing, and chatbot communication. The user interface emphasizes accessibility and responsiveness, allowing users to capture or select images for analysis and manage their profile settings. The frontend collects user inputs and communicates with the backend through secure RESTful APIs, relying on the backend to perform all authentication, verification, and session handling.\\
+The GomMold system architecture is organized into two primary modules: Frontend and Backend. The Frontend module, developed using Flutter, serves as the main interface through which users interact with the application. It provides functionalities such as image upload, mold analysis viewing, detection history, and chatbot communication. The user interface emphasizes accessibility and responsiveness, allowing users to capture or select images, review results, and manage their profile settings. The frontend collects all user inputs and communicates with the backend through secure RESTful APIs, relying entirely on the backend to perform authentication, verification, and session handling.\\
 
-The Backend module, implemented using the Flask framework, functions as the central processing unit of the system, handling all communication between the frontend, machine learning model, and data storage components. It manages user authentication including sign up, login, token generation, and session validation, ensuring secure access across devices. The backend processes image inputs, executes AI model predictions, and returns results including mold detection and model confidence. It also incorporates the OpenAI API to power the chatbot, which provides general cleaning tips and mold prevention guidance based on user questions. For scalability and cloud integration, the backend is hosted on Google Cloud, ensuring high reliability and performance efficiency. Data is transmitted securely between modules using encrypted API endpoints, and all user information and image data are systematically stored and retrieved through integrated cloud databases.\\
+The Backend module, implemented with the Flask framework and deployed on a Linux-based server via Railway, acts as the central processing engine of the system. It manages all authentication processes, including user registration, login, token generation, and session validation, ensuring secure access across devices. The backend also handles the core image-processing pipeline: receiving uploaded images, running them through the machine learning inference engine, interpreting prediction outputs, and returning structured JSON responses back to the Flutter application. Additionally, the backend integrates the OpenAI API to power an interactive chatbot, enabling users to ask mold-related questions and receive cleaning advice, risk explanations, and preventative guidance. By hosting the backend on Railway, GomMold benefits from faster deployment cycles, simpler configuration, and more transparent error handling.\\
 
-The Static Data Storage module is responsible for managing all user-generated and application-related data, including images, AI analysis results, and user profiles. Firebase Firestore and Google Cloud Storage are utilized to handle structured and unstructured data respectively, allowing for efficient retrieval and synchronization with backend services. This module ensures data persistence, supports image versioning, and maintains real-time updates between the application layers. \\
+The data storage layer is responsible for managing all user-generated and application-related data. Firebase Firestore is used to store structured data such as user profiles and detection metadata, while Firebase Storage handles unstructured data such as uploaded images and model inference results. This design ensures efficient data retrieval, real-time synchronization, and reliable image versioning across the application layers.\\
 
-The Machine Learning module serves as the core analytical engine of GomMold. Built using a YOLO-based deep learning model implemented in PyTorch, this module enables fast and reliable mold detection directly from user-uploaded images. The training dataset is prepared and annotated through Roboflow, then trained offline in Google Colab to generate a custom model optimized for real-world conditions. Once trained, the model is deployed within the Flask backend, where incoming images from the frontend are processed and evaluated by the YOLO model to determine the presence of mold along with the corresponding confidence levels. The detection output is then returned to the user through the mobile application. In addition to the detection system, GomMold integrates an optional chatbot powered by the OpenAI API, allowing users to ask follow-up questions and receive general cleaning tips or preventive guidance.\\
+The machine learning component forms the core analytical engine of GomMold. The mold detection model is built using PyTorch and trained offline using datasets prepared and annotated through Roboflow. Training is conducted in Google Colab to optimize the model under various real-world lighting and surface conditions. After training, the model is exported to ONNX format to ensure compatibility with the cloud backend. Within the Flask backend, the ONNX model is loaded and executed using ONNX Runtime, allowing fast and lightweight inference for every uploaded image. The system evaluates the model’s output to determine the presence of mold and its confidence level, returning the result directly to the user through the mobile application. In addition to detection, GomMold incorporates an optional chatbot powered by the OpenAI API, enabling users to obtain further clarification, cleaning tips, or preventive advice.\\
 
-Collectively, these modules form an integrated ecosystem that combines real-time image analysis and cloud-based data management to deliver an intelligent and user-centric solution for mold detection and prevention. The modular architecture ensures scalability, reliability, and interoperability, enabling GomMold to serve as both a practical application for everyday users and a research-oriented platform for further advancements in environmental health monitoring and AI-assisted household management.
+Collectively, these modules create an integrated ecosystem that combines real-time image analysis, cloud-based data management, and AI-assisted feedback to deliver a practical, reliable, and user-friendly solution for mold detection and prevention. The modular architecture ensures scalability, maintainability, and interoperability, positioning GomMold as a viable tool for both everyday users and future advancements in environmental health monitoring.
+
+
+\subsection{Directory Organization} 
+\begin{table}[h]
+\caption{DIRECTORY-ORGANIZATION-FRONTEND-1}
+\def\arraystretch{1.24} \small
+    \begin{tabular}{|p{3.7cm}|p{4.1cm}|}
+\hline
+Directory & File Name \\ \hline
+          Root  & .flutter-plugins-dependencies \par .gitignore \par .metadata \par README.md \par analysis\_options.yaml \par devtools\_options.yaml \par firebase.json \par gomMold\_frontend.iml \par package-lock.json \par package.json \par pubspec.lock \par pubspec.yaml
+          \\ \hline
+\end{tabular}
+\end{table}
+\newpage
+
+          
+\begin{table}[h]
+\caption{DIRECTORY-ORGANIZATION-FRONTEND-2}
+\def\arraystretch{1.24} \small
+    \begin{tabular}{|p{3.7cm}|p{4.1cm}|}
+\hline
+          
+          .dart\_tool \par   & \par package\_config.json \par package\_graph.json \par version 
+          \\ \hline
+          
+          .dart\_tool/dartpad \par  &\par web\_plugin\_registrant.dart
+          \\ \hline
+          
+          .idea \par   & modules.xml \par workspace.xml
+          \\ \hline
+          
+          .idea/libraries \par & Dart\_SDK.xml \par KotlinJavaRuntime.xml
+          \\ \hline
+          
+          .idea/runConffigurations \par  & main\_dart.xml  
+          \\ \hline
+
+          android \par & .gitignore \par build.gradle.kts \par gommold\_frontend\_android.iml \par gradle.properties \par gradlew \par gradlew.bat \par local.properties \par settings.gradle.kts
+          \\ \hline
+          
+          android/app \par   & \par build.gradle.kts \par google-services.json \par 
+          \\ \hline
+
+          android/app/src/debug \par   & \par AndroidManifest.xml
+          \\ \hline
+
+          android/app/src/main \par   & \par AndroidManifest.xml
+          \\ \hline
+
+          android/app/src/debug \par   & \par AndroidManifest.xml
+          \\ \hline
+
+          android/app/src/main/kotlin/ \par com/example/\par gommold\_frontend  \par & \par MainActivity.kt
+          \\ \hline
+
+          android/app/src/main/res \par /drawable-v21 \par   & \par launch\_background.xml
+          \\ \hline
+
+          android/app/src/main/res \par /drawable \par   & \par launch\_background.xml
+          \\ \hline
+
+          android/app/src/main/res  \par /mipmap-hdpi \par   & \par ic\_launcher.png
+          \\ \hline
+
+          android/app/src/main/res \par /mipmap-mdpi \par   & \par ic\_launcher.png
+          \\ \hline
+
+          android/app/src/main/res \par /mipmap-xhdpi \par   & \par ic\_launcher.png
+          \\ \hline
+
+          android/app/src/main/res  \par /mipmap-xxhdpi \par   & \par ic\_launcher.png
+          \\ \hline
+          
+          android/app/src/main/res  \par /mipmap-xxxhdpi \par   & \par ic\_launcher.png
+          \\ \hline
+
+          
+\end{tabular}
+\end{table}
+
+\newpage 
+\begin{table}[h]
+\caption{DIRECTORY-ORGANIZATION-FRONTEND-3}
+\def\arraystretch{1.24} \small
+    \begin{tabular}{|p{3.7cm}|p{4.1cm}|}
+\hline
+          
+          android/app/src/main/res  \par /values-night \par   & \par styles.xml
+          \\ \hline
+
+          android/app/src/main/res  \par /values \par   & \par styles.xml
+          \\ \hline
+          
+          android/app/src/profile \par   & \par AndroidManifest.xml
+          \\ \hline
+
+          android/gradle/wrapper \par   & \par gradle-wrapper.properties
+          \\ \hline
+
+          assets/images \par   & \par ChatBot.png \par Homepage-time.png \par Identify Page- \par Success Result.png  \par Image Page.png \par LogIn Page.png \par Settings.png \par Sign Up Page.png \par logo.png  
+          \\ \hline
+          
+          dist   & \par socket.js
+          \\ \hline
+
+          ios \par   & \par .gitignore \par Podfile
+          \\ \hline
+
+          ios/Flutter \par   & \par AppFrameworkInfo.plist \par Debug.xconfig \par Generated.xconfig  \par Release.xconfig \par flutter\_export\_environment.sh
+          \\ \hline
+
+          ios/Runner.xcodeproj \par   & \par project.pbxproj
+          \\ \hline
+
+          ios/Runner.xcodeproj \par /project.xcworkspace   & \par contents.xcworkspacedata
+          \\ \hline
+
+          ios/Runner.xcodeproj \par /project.xcworkspace \par /xcshareddata  & \par IDEWorkspaceChecks.list
+          \\ \hline
+
+          ios/Runner.xcodeproj \par /xcshareddata/xcschemes  & \par Runner.xscheme
+          \\ \hline
+
+          ios/Runner.xcworkspace \par   & \par contents.xcworkspacedata
+          \\ \hline
+
+          ios/Runner.xcworkspace \par /xcshareddata  & \par IDEWorkspaceChecks.list \par WorkspaceSettings.xcsettings
+          \\ \hline
+
+          ios/Runner \par   & \par AppDelegate.swift \par GeneratedPluginRegistrant.h \par GeneratedPluginRegistrant.m \par GoogleService-Info.plist \par Info.plist \par Runner-Bridging-Header.h
+          \\ \hline
+
+           ios/Runner/Assets.xcassets \par /AppIcon.appiconset  & \par Contents.json \par Icon-App-1024x1024@1x.png \par Icon-App-20x20@1x.png \par Icon-App-20x20@2x.png \par Icon-App-20x20@3x.png \par Icon-App-29x29@1x.png \par Icon-App-29x29@2x.png \par Icon-App-29x29@3x.png \par Icon-App-40x40@1x.png \par Icon-App-40x40@2x.png \par Icon-App-40x40@3x.png \par Icon-App-60x60@2x.png \par Icon-App-60x60@3x.png \par Icon-App-76x76@1x.png \par Icon-App-76x76@2x.png \par Icon-App-83.5x83.5@2x.png 
+          \\ \hline
+          
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{DIRECTORY-ORGANIZATION-FRONTEND-4}
+\def\arraystretch{1.24} \small
+    \begin{tabular}{|p{3.7cm}|p{4.1cm}|}
+\hline
+        
+
+          ios/Runner/Assets.xcassets \par /LaunchImage   & \par Contents.json
+          \\ \hline
+
+          ios/Runner/Assets.xcassets \par /LaunchImage  & \par Contents.json
+          \\ \hline
+
+          imageset \par   & \par LaunchImage.png \par LaunchImage@2x.png \par LaunchImage@3x.png  \par REDME.md
+          \\ \hline
+
+          ios/Runner/Base.lproj    & \par LaunchScreen.storyboard \par Main.storyboard
+          \\ \hline
+
+          ios/RunnerTests  & \par RunnerTests.swift
+          \\ \hline
+
+          lib   & \par main.dart
+          \\ \hline
+
+          lib/src/models   & \par detection.dart
+          \\ \hline
+
+          lib/src/screens   & \par chatboot\_page.dart \par homepage\_time.dart \par identify\_page.dart \par image\_page.dart \par initial\_page.dart \par login\_page.dart \par settings\_page.dart \par sign\_up\_page.dart
+          \\ \hline      
+
+          lib/src/services \par   & \par api\_service.dart, auth\_service.dart, firebase\_service.dart 
+        \\ \hline
+        
+        lib/src/utils  & \par constants.dart \par image\_utils.dart
+        \\ \hline   
+
+        lib/src/widgets  & \par card\_item.dart \par custom\_button.dart  \par custom\_textfield.dart
+        \\ \hline 
+
+        linux  & \par .gitignore \par CMakeLists.txt
+        \\ \hline 
+
+        linux/flutter   & \par CMakeLists.txt \par generated\_plugin\_registrant.cc \par generated\_plugin\_registrant.h \par generated\_plugins.cmake
+        \\ \hline
+
+        linux/runner \par   & \par CMakeLists.txt \par main.cc \par my\_application.cc \par my\_application.h
+        \\ \hline
+
+        macos \par   & \par .gitignore \par Podfile \par Podfile.lock
+        \\ \hline
+
+        macos/Flutter \par   & \par Flutter-Debug.xcconfig \par Flutter-Release.xcconfig \par GeneratedPluginRegistrant.swift
+        \\ \hline
+
+        macos/Runner.xcodeproj  & \par project.pbxproj
+         \\ \hline
+
+        macos/Runner.xcodeproj \par /project.xcworkspace \par /xcshareddata   & \par IDEWorkspaceChecks.plist
+        \\ \hline
+
+        macos/Runner.xcodeproj \par /xcshareddata/xcschemes   & \par Runner.xcscheme
+        \\ \hline
+
+        macos/Runner.xcworkspace  & \par contents.xcworkspacedata
+        \\ \hline
+
+        macos/Runner.xcworkspace \par /xcshareddata  & \par IDEWorkspaceChecks.plist
+        \\ \hline
+
+        macos/Runner \par   & \par AppDelegate.swift \par DebugProfile.entitlements \par GoogleService-Info.plist \par Info.plist \par MainFlutterWindow.swift \par Release.entitlements
+         \\ \hline
+        
+    \end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{DIRECTORY-ORGANIZATION-FRONTEND-5}
+\def\arraystretch{1.24} \small
+    \begin{tabular}{|p{3.7cm}|p{4.1cm}|}
+\hline
+
+
+        macos/Runner/Assets.xcassets \par /AppIcon.appiconset \par   & \par Contents.json \par app\_icon\_1024.png \par app\_icon\_128.png \par app\_icon\_16.png \par app\_icon\_256.png \par app\_icon\_32.png \par app\_icon\_512.png \par app\_icon\_64.png
+        \\ \hline
+
+        macos/Runner/Base.lproj   & \par MainMenu.xib
+        \\ \hline
+
+        macos/Runner/Configs \par   & \par AppInfo.xcconfig \par Debug.xcconfig \par Release.xcconfig \par Warnings.xcconfig
+        \\ \hline
+
+        macos/RunnerTests  & \par RunnerTests.swift
+        \\ \hline
+
+        node\_modules   & \par .package-lock.json
+        \\ \hline
+
+        node\_modules/ws   & \par LICENSE \par README.md \par browser.js \par index.js \par package.json \par wrapper.mjs
+        \\ \hline
+
+        node\_modules/ws/lib \par   & \par buffer-util.js \par constants.js \par event-target.js \par extension.js \par limiter.js \par permessage-deflate.js \par receiver.js \par sender.js \par stream.js \par subprotocol.js \par validation.js \par websocket-server.js \par websocket.js
+        \\ \hline
+
+        test   & \par widget\_test.dart
+        \\ \hline
+
+        web & \par favicon.png \par index.html \par manifest.json
+        \\ \hline
+
+        web/icons \par   & \par Icon-192.png \par Icon-512.png \par Icon-maskable-192.png \par Icon-maskable-512.png
+        \\ \hline
+
+        windows \par   & \par .gitignore \par CMakeLists.txt
+        \\ \hline
+
+        windows/flutter \par   & \par CMakeLists.txt \par Generated\_plugin\_registrant.cc \par Generated\_plugin\_registrant.h \par generated\_plugin.cmake
+        \\ \hline
+
+        windows/runner \par   & \par CMakeLists.txt \par Runner.rc \par flutter\_window.cpp \par flutter\_window.h \par main.cpp \par resource.h \par resource.h \par runner.exe.manifest \par utils.cpp \par utils.h \par wiin32\_window.cpp \par win32\_window.h
+        \\ \hline
+
+        windows/runner/resources   & \par app\_icon.ico
+        \\ \hline
+        
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\caption{DIRECTORY-ORGANIZATION-BACKEND-1}
+\def\arraystretch{1.24} \small
+    \begin{tabular}{|p{3.8cm}|p{4.3cm}|}
+        \hline
+        Directory & File Name \\ \hline
+          root \par   & \par .gitignore \par Procfile \par README.md \par requirements.txt \par runtime.txt
+        \\ \hline
+
+        src \par   & \par \_\_init\_\_.py \par app.py \par firebase\_init.py \par ml\_model.py \par token\_utils.py
+        \\ \hline
+
+        src/routes \par   & \par \_\_init\_\_.py \par auth.py \par chatbot.py \par history.py \par mold.py \par user.py
+        \\ \hline
+
+        src/models \par   & \par best.onnx
+        \\ \hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{DIRECTORY-ORGANIZATION-AI}
+\def\arraystretch{1.24} \small
+    \begin{tabular}{|p{3.9cm}|p{4cm}|}
+    \hline
+        Directory & File Name \\ \hline
+        root \par   & \par .DS\_Store \par README.md
+        \\ \hline
+
+        models \par   & \par README.md (download link for the trained model because github does not allow large file upload)
+        \\ \hline
+
+        training \par   & \par GomMold\_ML.ipynb \par dataset\_info.md
+        \\ \hline
+
+        training/images \par   & \par BoxF1\_curve (1).png \par BoxPR\_curve (1).png \par README.md \par confusion\_matrix (1).png
+        \\ \hline
+        
+    \end{tabular}
+\end{table}
+
+\clearpage
+\subsection{Module 1: Frontend}
+\begin{enumerate}
+    \item[1)] Purpose\\
+    The Frontend Module of GomMold serves as the primary user-facing interface, allowing individuals to interact seamlessly with the mold detection system. It manages all visual elements, user inputs, and navigation flows to deliver an intuitive and responsive experience across devices. Developed using Flutter, the frontend communicates securely with the backend server to submit images for analysis, retrieve mold detection results, and handle user authentication. Its primary objective is to provide a smooth, accessible, and reliable platform that enables users to perform mold identification efficiently while maintaining consistent performance and usability.\\ 
+    \item[2)] Functionality \\
+    The GomMold frontend offers comprehensive features including user authentication, secure token storage, and input handling for email and password. Users can capture images using the device camera or select from the gallery, and these images are transmitted to the backend for analysis via RESTful APIs. Detection results are displayed clearly, and navigation across pages such as login, home, and identification is handled seamlessly. The module incorporates reusable widgets and components for consistent UI design, manages application state using provider and service classes, and ensures real-time interaction with the backend. Additionally, the frontend integrates a chatbot interface for guidance and supports data visualization, history viewing, and profile management, providing a fully interactive and user-friendly mold detection experience. \\
+    
+    \item[3)]Location of source code : \url{https://github.com/GomMold/GomMold_FrontEnd}\\ 
+    
+    \item[4)] Class Component
+    \begin{itemize} 
+        \item root :
+            \begin{itemize}
+                \item.flutter-plugins-dependencies : This is a file that contains metadata for Flutter plugin dependencies used by the project.
+                \item .gitignore : This is a file that specifies which files and directories should be ignored by Git version control.
+                \item .metadata : This is a file that contains project metadata generated by Flutter, including version and configuration details.
+                \item README.md : This is a documentation file that provides an overview of the project and instructions for developers.
+                \item analysis\_options.yaml : This is a configuration file that defines Dart and Flutter linting rules for static code analysis.
+                \item devtools\_options.yaml : This is a file that configures options for Dart DevTools.
+                \item firebase.json : This is a configuration file defining Firebase settings for the project.
+                \item gomMold\_frontend.iml : This is an IntelliJ project module file containing IDE-specific configuration.
+                \item package-lock.json : This is a file that records exact versions of Node dependencies to ensure consistent builds.
+                \item package.json : This is a file that defines Node scripts and dependencies used in development tooling.
+                \item pubspec.lock : This is a lock file containing the resolved versions of Flutter packages for reproducible builds.
+                \item pubspec.yaml : This is the core Flutter configuration file that manages dependencies, assets, and project metadata.
+            \end{itemize}
+    
+        \item .dart\_tool :
+            \begin{itemize}
+                \item  package\_config.json : This is a Dart configuration file mapping packages to filesystem locations.
+                \item package\_graph.json : This is a file that describes dependency graph metadata for Dart packages.
+                \item version : This is a file that stores package version information used internally by Dart.
+            \end{itemize}
+        
+        \item .dart\_tool/dartpad 
+            \begin{itemize}
+                \item web\_plugin\_registrant.dart : This is a file that registers Flutter web plugins for browser builds.
+            \end{itemize}
+    
+        \item idea
+            \begin{itemize}
+                \item modules.xml : This is a file defining project modules for IntelliJ or Android Studio.
+                \item workspace.xml : This is a file containing IDE workspace settings, such as editor state and local preferences.
+            \end{itemize}
+    
+        \item .idea/libraries
+            \begin{itemize}
+                \item Dart\_SDK.xml : This is a configuration file defining the Dart SDK location for the IDE.
+                \item KotlinJavaRuntime.xml : This is a file specifying Kotlin and Java runtime libraries for the IDE.
+            \end{itemize}
+    
+        \item .idea/runConffigurations
+            \begin{itemize}
+                \item main\_dart.xml : This is a run configuration file that stores IDE execution settings for running main.dart.
+            \end{itemize}
+    
+        \item android
+            \begin{itemize}
+                \item gitignore (android) : This is a file that specifies which Android-specific files and folders should be ignored by Git.
+                \item build.gradle.kts : This is the Gradle build configuration script for the Android module written in Kotlin DSL.
+                \item gomMold\_frontend\_android.iml : This is an Android Studio module file specific to the Android project configuration.
+                \item gradle.properties : This is a file that defines Gradle configuration properties such as JVM settings and build options.
+                \item gradlew : This is the Gradle wrapper script used to execute Gradle commands on Unix-based systems.
+                \item gradlew.bat : This is the Gradle wrapper script used to execute Gradle commands on Windows systems.
+                \item local.properties : This is a file that specifies the Android SDK path and other local machine configurations.
+                \item settings.gradle.kts : This is the Gradle settings file that defines the modules included in the Android project.
+            \end{itemize}
+
+        \item android/app 
+            \begin{itemize}
+                \item build.gradle.kts : This is the Gradle build configuration script for the Android module, responsible for defining dependencies, build types, and project settings.
+                \item google-services.json : This is a Firebase configuration file that connects the Android app to Firebase services such as authentication and cloud storage.
+            \end{itemize}
+
+        \item android/app/src/debug 
+            \begin{itemize}
+                \item AndroidManifest.xml : This is a manifest file used specifically for the debug build configuration.
+            \end{itemize} 
+
+        \item android/app/src/main
+            \begin{itemize}
+                \item AndroidManifest.xml : This is the main manifest file that defines Android app metadata, permissions, and activity declarations.
+            \end{itemize}
+
+        \item android/app/src/main/kotlin/com/example/gommold\_frontend
+            \begin{itemize}
+                \item MainActivity.kt : This is the main Android activity file that initializes Flutter and bridges the Flutter engine with the native Android environment.
+            \end{itemize}
+            
+        \item android/app/src/main/res/drawable-v21
+            \begin{itemize}
+                \item launch\_background.xml : This is an Android drawable file for configuring the launch screen background on devices running API level 21 and above.
+            \end{itemize}
+
+        \item android/app/src/main/res/drawable-v21
+            \begin{itemize}
+                \item launch\_background.xml : This is an Android drawable file for configuring the launch screen background on devices running API level 21 and above.
+            \end{itemize}
+
+        \item android/app/src/main/res/mipmap-mdpi
+            \begin{itemize}
+                \item ic\_launcher.png : This is the medium-density launcher icon for Android devices (MDPI).
+            \end{itemize}
+
+        \item android/app/src/main/res/mipmap-xhdpi
+             \begin{itemize}
+                \item ic\_launcher.png : This is the extra-high-density launcher icon (XHDPI).
+            \end{itemize}
+
+        \item android/app/src/main/res/mipmap-xxhdpi
+            \begin{itemize}
+                \item ic\_launcher.png : This is the extra-extra-high-density launcher icon (XXHDPI).
+            \end{itemize}
+
+        \item android/app/src/main/res/mipmap-xxxhdpi
+            \begin{itemize}
+                \item ic\_launcher.png : This is the extra-extra-extra-high-density launcher icon (XXXHDPI).
+            \end{itemize}
+        
+        \item android/app/src/main/res/values-night
+            \begin{itemize}
+                \item styles.xml : This file contains theme styles for dark mode (night) UI.
+            \end{itemize}
+        
+        \item android/app/src/main/res/values
+            \begin{itemize}
+                \item styles.xml : This file contains default UI theme styles for Android light mode.
+            \end{itemize}
+        
+        \item android/app/src/profile
+            \begin{itemize}
+                \item AndroidManifest.xml : Manifest file used by the profile build configuration for profiling.
+            \end{itemize}
+        
+        \item android/gradle/wrapper
+            \begin{itemize}
+                \item gradle-wrapper.properties : Defines the Gradle wrapper configuration.
+            \end{itemize}
+        
+        \item assets/images
+            \begin{itemize}
+                \item ChatBot.png : This is an image asset used for the chatbot interface.
+                \item Homepage-time.png  : This is an image representing the homepage or detection history UI.
+                \item Identify Page -- Success Result.png  : This is an image used for displaying a successful detection outcome.
+                \item Image Page.png : This is an image asset for the image analysis page UI.
+                \item LogIn Page.png : This is a login screen asset representing authentication UI.
+                \item Settings.png : This is an image used for the settings interface.
+                \item Sign Up Page.png : This is an image used for the registration screen.
+                \item logo.png : This is the main application logo for branding purposes.
+            \end{itemize}
+        
+        \item dist
+            \begin{itemize}
+                \item socket.js : Manages socket or real-time connection logic.
+            \end{itemize}
+        
+        \item ios
+            \begin{itemize}
+                \item .gitignore : This is a file specifying which iOS files and directories should be excluded from Git version control.
+                \item Podfile  : This is a CocoaPods configuration file used to manage iOS-specific dependencies for the Flutter application.
+            \end{itemize}
+        
+        \item ios/Flutter
+            \begin{itemize}
+                \item AppFrameworkInfo.plist : This is a configuration file for Flutter’s iOS framework, defining metadata required by the iOS system.
+                \item Debug.xcconfig : This is an Xcode configuration file that defines settings for the debug build of the iOS Flutter module.
+                \item Generated.xcconfig : This is a configuration file generated by Flutter that includes build settings and paths needed for the iOS build system.
+                \item Release.xcconfig : This is an Xcode configuration file that specifies build settings for the release version of the iOS app.
+                \item flutter\_export\_environment.sh: This is a shell script generated by Flutter that exports environment variables used during the iOS build process.
+            \end{itemize}
+        
+        \item ios/Runner.xcodeproj
+            \begin{itemize}
+                \item project.pbxproj: This is the main project configuration file for Xcode, containing information about build targets, file references, and project settings.
+            \end{itemize}
+        
+        \item ios/Runner.xcodeproj/project.xcworkspace
+            \begin{itemize}
+                \item contents.xcworkspacedata: This is a workspace definition file that describes how Xcode organizes and loads the project workspace.
+            \end{itemize}
+        
+        \item ios/Runner.xcodeproj/project.xcworkspace/xcshareddata
+            \begin{itemize}
+                \item IDEWorkspaceChecks.list: This is a file generated by Xcode to store workspace validation checks and compatibility warnings.
+            \end{itemize}
+        
+        \item ios/Runner.xcodeproj/xcshareddata/xcschemes
+            \begin{itemize}
+                \item Runner.xscheme : This is an Xcode scheme file that defines how the app is built, run, profiled, and tested.
+            \end{itemize}
+        
+        \item ios/Runner.xcworkspace
+            \begin{itemize}
+                \item contents.xcworkspacedata: This is a file that defines the workspace layout and how Xcode groups related projects.
+            \end{itemize}
+        
+        \item ios/Runner.xcworkspace/xcshareddata
+            \begin{itemize}
+                \item IDEWorkspaceChecks.list : This is a workspace-level validation file storing compatibility and version checks for Xcode
+                \item WorkspaceSettings.xcsettings : This is a configuration file storing workspace-level user interface and environment settings.
+
+            \end{itemize}
+        
+        \item ios/Runner
+            \begin{itemize}
+                \item AppDelegate.swift : This is the main iOS application entry file responsible for initializing the Flutter engine and handling app lifecycle events.
+                \item GeneratedPluginRegistrant.h : This is a header file automatically generated to register Flutter plugins for use in the iOS project.
+                \item GeneratedPluginRegistrant.m : This is the implementation file that executes plugin registration when the app starts.
+                \item GoogleService-Info.plist  : This is the Firebase configuration file containing API keys and identifiers required for Firebase services on iOS.
+                \item Info.plist : This is the metadata configuration file for iOS containing permissions, bundle identifiers, and application properties.
+                \item Runner-Bridging-Header.h : This is a bridging header that allows Swift and Objective-C code to interoperate in the iOS project.
+
+            \end{itemize}
+        
+        \item ios/Runner/Assets.xcassets/AppIcon.appiconset
+            \begin{itemize}
+                \item Contents.json : This is a metadata file describing the icon assets included in the app icon set.
+                \item Icon-App-1024x1024@1x.png : This is the 1024×1024 icon used for App Store listing and high-resolution branding.
+                \item Icon-App-20x20@1x.png : This is an app icon for small iOS interface elements at 1× resolution.
+                \item Icon-App-20x20@2x.png : This is a scaled 2× version of the 20×20 icon used for higher-resolution displays.
+                \item Icon-App-20x20@3x.png : This is a 3× scaled version of the 20×20 icon for high-density screens.
+                \item Icon-App-29x29@1x.png : This is the 29×29 icon used for iOS settings and spotlight searches.
+                \item Icon-App-29x29@2x.png : This is the 2× resolution version of the 29×29 icon.
+                \item Icon-App-29x29@3x.png : This is the 3× resolution version of the 29×29 icon.
+                \item Icon-App-40x40@1x.png : This is a 40×40 icon used in various iOS UI contexts.
+                \item Icon-App-40x40@2x.png : This is a 2× scaled version of the 40×40 icon.
+                \item Icon-App-40x40@3x.png : This is a 3× scaled version of the 40×40 icon.
+                \item Icon-App-60x60@2x.png : This is a 2× scaled version of the 60×60 main app icon.
+                \item Icon-App-60x60@3x.png : This is a 3× scaled version of the 60×60 icon used for app home screen.
+                \item Icon-App-76x76@1x.png : This is a 76×76 iPad home screen icon.
+                \item Icon-App-76x76@2x.png : This is a 2× version of the 76×76 icon for retina iPads.
+                \item Icon-App-83.5x83.5@2x.png : This is a scaled icon used for iPad Pro devices.
+            \end{itemize}
+        
+        \item ios/Runner/Assets.xcassets/LaunchImage.imageset
+            \begin{itemize}
+                \item Contents.json : This is a metadata file that defines the launch images used for the iOS splash screen.
+                \item LaunchImage.png : This is the default launch image displayed when the app starts.
+                \item LaunchImage@2x.png : This is the higher-resolution version of the launch image for 2× density devices.
+                \item LaunchImage@3x.png : This is the 3× resolution launch screen image for high-density iOS devices.
+            \end{itemize}
+        
+        \item ios/Runner/Base.lproj
+            \begin{itemize}
+                \item README.md : This is a documentation file included within the iOS project’s localization folder, typically containing notes or configuration instructions.
+                \item LaunchScreen.storyboard : This is a storyboard file that defines the visual layout for the app’s launch screen on iOS.
+                \item Main.storyboard : This is a storyboard file that defines interface components for native iOS screens when needed by the Flutter integration.
+            \end{itemize}
+        
+        \item ios/RunnerTests
+            \begin{itemize}
+                \item RunnerTests.swift: This is a Swift test file used for writing unit tests for the iOS portion of the Flutter application.
+            \end{itemize}
+        
+        \item lib
+            \begin{itemize}
+                \item main.dart : This is the primary entry point of the Flutter application that initializes routing and assembles the overall app structure.
+            \end{itemize}
+        
+        \item lib/src/models
+            \begin{itemize}
+                \item detection.dart : This is a file that defines the data model for mold detection, including fields such as prediction results, confidence scores, and image metadata.
+
+            \end{itemize}
+        
+        \item lib/src/screens
+            \begin{itemize}
+                \item chatbot\_page.dart : This is a file that displays the chatbot user interface and handles real-time AI interactions.
+                \item homepage\_time.dart: This is a file that displays detection history, arranged chronologically.
+                \item identify\_page.dart : This is a file that shows mold detection results returned by the backend or ML model.
+                \item image\_page.dart : This is a file for selecting, previewing, and uploading images for detection.
+                \item initial\_page.dart: This is the first screen loaded when the app starts, typically a splash or welcome page.
+                \item login\_page.dart : This is a file that manages user login with form validation and Firebase authentication.
+                \item settings\_page.dart : This is a file that manages user settings such as preferences and profile adjustments.
+                \item sign\_up\_page.dart : This is a file for user registration, collecting required information for account creation.
+
+            \end{itemize}
+        
+        \item lib/src/services
+            \begin{itemize}
+                \item api\_service.dart : This is a file that manages communication with the backend API, including HTTP requests.
+                \item auth\_service.dart : This is a file responsible for handling user authentication, including login, logout, and token management.
+                \item firebase\_service.dart  : This is a file for handling Firebase operations such as image uploads and cloud storage access.
+            \end{itemize}
+        
+        \item lib/src/utils
+            \begin{itemize}
+                \item constants.dart : This is a file that stores global constants including theme colors, API endpoints, and reusable configuration values.
+                \item image\_utils.dart : This is a file containing image-related helper functions such as formatting, resizing, and path handling.
+            \end{itemize}
+        
+        \item lib/src/widgets
+            \begin{itemize}
+                \item card\_item.dart : This is a reusable UI component that displays content inside a styled card.
+                \item custom\_button.dart : This is a custom reusable button component used across multiple screens.
+                \item custom\_textfield.dart : This is a reusable text field widget for form input and user data entry.
+
+            \end{itemize}
+        
+        \item linux
+            \begin{itemize}
+                \item .gitignore : This is a file specifying which Linux-related files should be ignored by Git version control.
+                \item CMakeLists.txt : This is a configuration file for building the Flutter Linux desktop application using CMake.
+            \end{itemize}
+        
+        \item linux/flutter
+            \begin{itemize}
+                \item CMakeLists.txt : This is a CMake configuration file specific to Flutter’s Linux plugin system.
+                \item generated\_plugin\_registrant.cc : This is a file that registers Flutter plugins for the Linux build.
+                \item generated\_plugin\_registrant.h : This is the header file containing declarations for plugin registration.
+                \item generated\_plugins.cmake: This is a CMake script automatically generated to include necessary plugins during the build.
+            \end{itemize}
+        
+        \item linux/runner
+            \begin{itemize}
+                \item ClaceLists.txt : This is a file defining build configurations for the Linux runner (desktop executable).
+                \item main.cc : This is the main C++ file that starts the Flutter engine for Linux.
+                \item my\_application.cc : This is a file defining application-level behavior for the Linux desktop application.
+                \item my\_application.h : This is the header file associated with my\_application.cc, defining class structures and declarations.
+            \end{itemize}
+        
+        \item macos
+            \begin{itemize}
+                \item .gitignore : This is a file specifying ignored files for the macOS portion of the Flutter project.
+                \item Podfile : This is a configuration file for managing macOS CocoaPods dependencies.
+                \item Podfile.lock: This is a lockfile that stores resolved versions of CocoaPods dependencies for macOS.
+            \end{itemize}
+        
+        \item macos/Flutter
+            \begin{itemize}
+                \item Flutter-Debug.xcconfig : This is a configuration file specifying build settings for the macOS debug version of the Flutter module.
+            \end{itemize}
+        
+        \item macos/Runner.xcodeproj
+            \begin{itemize}
+                \item project.pbxproj : This is the core Xcode project configuration file that defines build targets, file references, frameworks, and build settings for the macOS application.
+            \end{itemize}
+        
+        \item macos/Runner.xcodeproj/project.xcworkspace/xcshareddata
+            \begin{itemize}
+                \item IDEWorkspaceChecks.plist : This is a file generated by Xcode that records workspace validation checks and compatibility warnings.
+            \end{itemize}
+        
+        \item macos/Runner.xcodeproj/xcshareddata/xcschemes
+            \begin{itemize}
+                \item Runner.xcscheme : This is an Xcode scheme file that defines how the macOS application is built, run, profiled, and debugged.
+            \end{itemize}
+        
+        \item macos/Runner.xcworkspace
+            \begin{itemize}
+                \item contents.xcworkspacedata : This is a workspace file that describes how the macOS Flutter project and related components are grouped in Xcode.
+            \end{itemize}
+        
+        \item macos/Runner.xcworkspace/xcshareddata
+            \begin{itemize}
+                \item IDEWorkspaceChecks.plist : This is a workspace-level validation and compatibility check file generated by Xcode.
+            \end{itemize}
+        
+        \item macos/Runner
+            \begin{itemize}
+                \item AppDelegate.swift : This is the application entry point for the macOS version, responsible for initializing the Flutter engine.
+                \item DebugProfile.entitlements : This is a file specifying macOS entitlements (permissions) for the debug configuration.
+                \item GoogleService-Info.plist : This is a configuration file for integrating Firebase services into the macOS version of the app.
+                \item Info.plist : This is the metadata configuration file for the macOS application, defining identifiers, permissions, and app properties.
+                \item MainFlutterWindow.swift : This is a file defining the main application window for macOS, including window behavior and Flutter view setup.
+                \item Release.entitlements : This is an entitlements file specifying permissions and capabilities for the release version of the macOS application.
+            \end{itemize}
+        
+        \item macos/Runner/Assets.xcassets/AppIcon.appiconset
+            \begin{itemize}
+                \item Contents.json : This is the asset metadata file describing each icon used by the macOS application.
+                \item app\_icon\_1024.png : This is a 1024×1024 macOS app icon used for high-resolution displays and App Store listings.
+                \item app\_icon\_128.png : This is a 128×128 icon used in various macOS UI contexts.
+                \item app\_icon\_16.png : This is a 16×16 icon used for finder previews or small interface elements.
+                \item app\_icon\_256.png : This is a 256×256 icon used for larger interface elements.
+                \item app\_icon\_32.png : This is a 32×32 macOS icon used for settings or system dialogs.
+                \item app\_icon\_512.png : This is a 512×512 icon for high-resolution macOS interface displays.
+                \item app\_icon\_64.png : This is a 64×64 icon displayed in macOS applications and menus.
+
+            \end{itemize}
+        
+        \item macos/Runner/Base.lproj
+            \begin{itemize}
+                \item MainMenu.xib : This is an Interface Builder file that defines the macOS menu bar and application menu structure.
+            \end{itemize}
+        
+        \item macos/Runner/Configs
+            \begin{itemize}
+                \item AppInfo.xcconfig : This is a configuration file defining core application-level build settings for macOS.
+                \item Debug.xcconfig : This is a file containing build settings for the debug version of the macOS application.
+                \item Release.xcconfig : This is a file specifying build settings optimized for release builds.
+                \item Warnings.xcconfig : This is a file containing compiler warning settings and build-level diagnostic configurations
+            \end{itemize}
+        
+        \item macos/RunnerTests
+            \begin{itemize}
+                \item RunnerTests.swift : This is a Swift file used for implementing unit tests for the macOS version of the Flutter application.
+            \end{itemize}
+        
+        \item node\_modules
+            \begin{itemize}
+                \item package-lock.json : This is an autogenerated lock file used by Node.js to track exact versions of installed dependencies for consistency.
+            \end{itemize}
+        
+        \item node\_modules/ws
+            \begin{itemize}
+                \item LICENSE : This is the license file for the WebSocket (ws) package.
+                \item README.md : This is a documentation file describing usage and features of the ws library.
+                \item browser.js : This is a file that provides browser-compatible WebSocket utilities.
+                \item index.js : This is the main entry file for the WebSocket implementation.
+                \item package.json : This is a metadata file describing the ws package, version, and dependencies.
+                \item wrapper.mjs : This is an ES module wrapper for the WebSocket implementation.
+
+            \end{itemize}
+        
+        \item node\_modules/ws/lib
+            \begin{itemize}
+                \item buffer-util.js : This is a JavaScript utility file that provides optimized buffer operations for WebSocket data handling
+            \end{itemize}
+        
+        \item node\_modules/ws (Additional Library Files)
+            \begin{itemize}
+                \item constants.js : This file defines constant values used throughout the WebSocket implementation, such as protocol codes and configuration limits.
+                \item event-target.js : This is a file that implements an EventTarget-like API, allowing WebSocket instances to handle events in a browser-compatible manner.
+                \item extension.js : This file manages WebSocket protocol extensions, such as permessage-deflate.
+                \item limiter.js : This module provides rate-limiting utilities to prevent excessive WebSocket message processing.
+                \item permessage-deflate.js : This file implements the permessage-deflate compression extension for WebSocket data frames.
+                \item receiver.js : This file is responsible for receiving, parsing, and validating incoming WebSocket frames.
+                \item sender.js : This module manages the sending of WebSocket frames from the server or client.
+                \item stream.js : This provides streaming utilities used for WebSocket data handling.
+                \item subprotocol.js : This file manages WebSocket subprotocol negotiation between client and server.
+                \item validation.js : This module contains validation utilities to ensure WebSocket frames follow protocol rules.
+                \item websocket-server.js : This file implements the WebSocket server, handling connections and broadcast logic.
+                \item websocket.js : This is the main WebSocket implementation file that provides the core WebSocket class and protocol logic.
+            \end{itemize}
+        
+        \item test
+            \begin{itemize}
+                \item widget\_test.dart : This is a Dart test file used for writing widget-level unit tests for the Flutter application interface.
+            \end{itemize}
+        
+        \item web
+            \begin{itemize}
+                \item favicon.png : This is the small icon displayed in the browser tab when running the Flutter web version.
+                \item index.html : This is the main HTML file for Flutter Web, responsible for loading Flutter’s compiled JavaScript code.
+                \item manifest.json : This is a web app manifest file that defines metadata for Progressive Web App (PWA) features such as app name, icons, and theme color.
+            \end{itemize}
+        
+        \item web/icons
+            \begin{itemize}
+                \item Icon-192.png : This is a 192×192 web app icon used for PWA installation and app shortcuts.
+
+                \item Icon-512.png : This is the 512×512 PWA icon used for high-resolution displays.
+
+                \item Icon-maskable-192.png : This is a 192×192 maskable icon used for adaptive icons on modern devices.
+
+                \item Icon-maskable-512.png : This is a 512×512 maskable icon for high-resolution adaptive icons.
+
+            \end{itemize}
+        
+        \item windows
+            \begin{itemize}
+                \item .gitignore : This file defines which Windows-specific files and folders should be excluded from Git version control.
+                \item CMakeLists.txt : This is the main CMake build configuration file used to compile the Flutter Windows desktop application
+            \end{itemize}
+        
+        \item windows/flutter
+            \begin{itemize}
+                \item CMakeLists.txt : This is a CMake file containing build instructions for Flutter plugins on Windows.
+                \item Generated\_plugin\_registrant.cc : This is a C++ file that registers all Flutter plugins for the Windows build environment.
+                \item Generated\_plugin\_registrant.h : This is the header file containing declarations for plugin registration functions.
+                \item generated\_plugins.cmake : This CMake file automatically includes all required Flutter plugins during the build process.
+            \end{itemize}
+        
+        \item windows/runner
+            \begin{itemize}
+                \item CMakeLists.txt : This is a build configuration file that defines build rules for the Windows runner executable.
+                \item Runner.rc
+                \item flutter\_window.cpp : This contains Windows resource definitions (icons, metadata) for the Windows application.
+                \item flutter\_window.h : This is the header file containing declarations for Flutter window behavior.
+
+                \item main.cpp : This is the main entry point for the Windows desktop version of the Flutter application.
+
+                \item resource.h : This is a header file containing resource identifiers used by the Windows app.
+
+                \item runner.exe.manifest : This manifest file defines Windows application metadata such as DPI awareness and execution privileges.
+                \item utils.cpp : This file contains utility functions used by the Windows runner.
+                \item utils.h : This header file declares utility functions used across Windows runner modules.
+                \item win32\_window.cpp : This file implements the native Win32 window logic for the Flutter application.
+                \item win32\_window.h : This header file declares the Win32 window class and its methods.
+            \end{itemize}
+        
+        \item windows/runner/resources
+            \begin{itemize}
+                \item app\_icon.ico : This is the Windows application icon file used for the desktop executable.
+            \end{itemize}
+            
+    \end{itemize}
+    
+\end{enumerate}
+
+\subsection{Module 2 : Backend}
+\begin{enumerate}
+    \item[1)] Purpose\\
+   The backend of GomMold is designed to function as the central computational and data-management layer of the system. Its primary purpose is to coordinate communication between the mobile frontend, the AI-based mold detection model, and the cloud storage services. Implemented using Python and Flask, the backend is responsible for processing user requests, managing authentication workflows, and ensuring secure data transmission across all system components. It maintains the application’s operational integrity by storing user information, managing image data, and facilitating real-time interactions with the AI model. Deployed on Google Cloud, the backend provides a stable, scalable, and high-performance environment for delivering the system’s core services.\\
+    \item[2)] Functionality\\
+    The GomMold backend supports the full range of server-side operations required for the application. It manages user authentication through sign-up, login, token generation, and session validation mechanisms, ensuring controlled and secure access to system resources. The backend processes uploaded images, interacts with the AI model to generate mold detection results, and returns predictions including mold classification and confidence scores. Additionally, it integrates the OpenAI API to facilitate chatbot functionality, allowing users to obtain cleaning advice and mold-prevention guidance. The backend coordinates with Firebase Firestore and Google Cloud Storage to store user profiles, images, and detection history, enabling reliable data persistence and retrieval. Communication between modules is conducted through encrypted API endpoints, ensuring the confidentiality and integrity of all transmitted information. Overall, the backend provides the computational infrastructure necessary to support GomMold’s intelligent, cloud-based mold detection ecosystem.\\
+    \item[3)]Location of source code : \url{https://github.com/GomMold/GomMold_BackEnd}
+    
+    \item[4)] Class Components
+    
+    \begin{itemize}
+        \item root
+            \begin{itemize}
+                \item .gitignore : This file specifies which backend files and folders should be excluded from Git version control, such as virtual environments, cached files, and temporary outputs.
+                \item Procfile : Deployment configuration file that defines how the backend server should be launched.
+                \item README.md : Instructions on how to set up, run, and deploy the GomMold backend API.
+                \item requirements.txt : File listing all backend dependencies.
+                \item runtime.txt : File specifying the Python runtime version for deployment.
+            \end{itemize}
+    
+        \item src
+            \begin{itemize}
+                \item \_\_init\_\_.py : Defines the backend package structure.
+                \item app.py : Main application file that runs the backend server and initializes routing.
+                \item firebase\_init.py : Initializes Firebase Admin SDK for backend operations.
+                \item Ml\_model.py : Loads the trained ML model and performs prediction functions.
+                \item token\_utils.py : Generates, validates, and manages JWT tokens for secure authentication.
+            \end{itemize}
+        
+        \item src/routes
+            \begin{itemize}
+                \item \_\_init\_\_.py : Initializes the route package.
+                \item auth.py : Handles login, registration, and token-based authentication.
+                \item chatbot.py : Manages chatbot queries and generates AI responses.
+                \item history.py : Retrieves and manages user detection history.
+                \item mold.py : Receives uploaded images, sends them to the ML model, and returns detection results.
+                \item user.py : Handles user-related queries and profile interactions.
+            \end{itemize}
+
+        \item src/models
+            \begin{itemize}
+                \item best.onnx : A pre-trained mold detection model in ONNX format, used by the backend to perform inference on user-uploaded images. 
+            \end{itemize}
+    \end{itemize}
+\end{enumerate}
+\subsection{Module 3 : AI}
+\begin{enumerate}
+\item[1)] Purpose\\
+  The AI Module of GomMold serves as the core analytical engine responsible for the automated detection and classification of mold in user-submitted images. Implemented using a YOLO-based deep learning model in PyTorch, it ensures accurate, real-time recognition. The module encompasses data collection, preprocessing, model training, and fine-tuning to optimize performance under real-world conditions. Once trained, the model is deployed through the Flask backend, facilitating seamless communication with both frontend and backend components. Additionally, it integrates optional OpenAI-powered conversational capabilities to provide users with cleaning guidance and preventive advice. The primary objective of the AI Module is to deliver reliable, scalable, and efficient mold detection to support informed user decision-making and enhance overall application functionality.\\
+\item[2)] Functionality\\
+   The GomMold AI Module receives images uploaded through the frontend, preprocesses them, and executes inference using the trained YOLO model to determine mold presence and associated confidence scores. Image datasets are annotated and prepared via Roboflow, trained in Google Colab, and deployed for real-time analysis within the backend. Detection results are transmitted back to the frontend through secure API endpoints, ensuring clear and interpretable outcomes for users. Furthermore, the module supports an optional OpenAI-powered chatbot that provides general cleaning tips, preventive guidance, and interactive follow-up responses. Overall, the AI Module ensures efficient AI-driven analysis, seamless integration with other system components, and an enhanced, data-informed user experience.\\
+   
+\item[3)] Custom Mold Detection Dataset (Roboflow – v4)\\
+\noindent The dataset contains 1,134 annotated images of household surfaces.
+    \begin{itemize}
+        \item It consists of two classes:
+            \begin{itemize}
+                \item Mold
+                \item No Mold
+            \end{itemize}
+            
+        \item Images were collected from:
+            \begin{itemize}
+                \item Personal photography
+                \item Additional samples from public Roboflow Universe datasets
+                \item Additional samples from google 
+            \end{itemize} 
+            
+         \item Roboflow was used for:
+            \begin{itemize}
+                \item Annotation
+                \item Dataset augmentation
+                \item Resizing all images to 640×640
+                \item Exporting to YOLOv8 format\\
+            \end{itemize} 
+    \end{itemize}
+    
+\item[4)] System Configuration\\ 
+\noindent The training was conducted using Google Colab GPU environment.
+    \begin{itemize}
+        \item Hardware (Colab) :
+            \begin{itemize}
+                \item GPU: Tesla T4 
+                \item RAM: ~12–15GB
+                \item GPU VRAM: 16GB
+            \end{itemize}
+            
+        \item Software :
+            \begin{itemize}
+                \item Python 3.10
+                \item PyTorch (CUDA-enabled)
+                \item Ultralytics YOLOv8
+                \item Roboflow SDK\\
+            \end{itemize} 
+    \end{itemize}
+
+\item[5)]Location of source code : \url{https://github.com/GomMold/GomMold_ML}\\
+
+\begin{itemize}
+        \item root
+            \begin{itemize}
+                \item README.md : The instructions for the overall repository
+            \end{itemize}
+            
+        \item models
+            \begin{itemize}
+                \item README.md : Instructions for downloading the final best.pt model ((Model weights stored in GitHub Releases due to file size)
+            \end{itemize} 
+            
+        \item training
+            \begin{itemize}
+                \item GomMold\_ML.ipynb : Main notebook for training the YOLOv8 model (Contains dataset loading, preprocessing, training commands, evaluation)
+                \item dataset\_info.md : Full dataset documentation (version, structure, classes, augmentations)
+            \end{itemize} 
+        
+        \item training/images
+            \begin{itemize}
+                \item BoxF1\_curve (1).png
+                \item BoxPR\_curve (1).png
+                \item README.md
+                \item confusion\_matrix (1).png
+            \end{itemize} 
+        
+    \end{itemize}  
+\end{enumerate}
+
+\section{Use Case}
+\subsection{Loading Page}
+\newpage
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Rinitialpage.png}
+    \caption{Initial page}
+    \label{fig:enter-label}
+    \end{figure}
+\noindent When users open the GomMold app, they are first greeted with a minimal welcome screen featuring the logo and a “Get Started” button. This page serves as the entry point of the application, guiding users smoothly into the main experience. From here, they can proceed to authentication or move directly into the app based on their login status.
+
+\subsection{Sign Up Page}
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rsignuperror.png}
+        \caption{Sign up error}
+        \label{fig:sign up page}
+    \end{minipage}%
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rsignuperror2.png}
+        \caption{Sign up error}
+        \label{fig:signup page}
+    \end{minipage}
+\end{figure}
+\noindent When users enter incorrect or incomplete information on the Sign Up page, the app provides instant validation feedback by highlighting specific errors such as an invalid email format or a password that is too short. This allows users to correct their input before continuing. If the registration still fails due to invalid details or an email that already exists, the page displays an error message prompting the user to try again, ensuring a clear and guided sign-up process.
+
+\newpage
+\subsection{Login Page}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Rloginpage.png}
+    \caption{Login Page}
+    \label{fig:enter-label}
+    \end{figure}
+\noindent Users enter their email and password, and the system sends these credentials to the backend for verification. The backend validates the information against existing records, and if the credentials are correct, the user is authenticated and granted access to the application. 
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rloginerror.png}
+        \caption{Log in error}
+        \label{enter-label}
+    \end{minipage}%
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rloginerror2.png}
+        \caption{Log in error}
+        \label{enter-label}
+    \end{minipage}
+\end{figure}
+\noindent If users submit invalid or incomplete login information, the system immediately highlights the specific issues such as missing email or password, to ensure proper input before authentication. When valid fields are entered but the credentials do not match any existing account, the backend returns an error response, and the app displays a “Login failed” message, prompting the user to try again and recheck their details.
+
+\newpage
+\subsection{Main Page}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Rhistorypage1.png}
+    \caption{Main Page}
+    \label{fig:enter-label}
+    \end{figure}
+\noindent The Main page displays all past mold detection results saved by the user. If no records are available, the page simply shows a “No history yet” message. 
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rhistorypage2.png}
+        \caption{History}
+        \label{enter-label}
+    \end{minipage}%
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rhistorypagewhentap.png}
+        \caption{History information}
+        \label{enter-label}
+    \end{minipage}
+\end{figure}
+\noindent Once detections exist, each entry appears with its name, detection status, and timestamp. When a user taps on any history item, the app opens the detailed Result Analysis page, allowing them to view the original image, detection outcome, and associated information exactly as it appeared during the initial analysis.
+
+\newpage
+\subsection{Image Page}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Ridentifypage.png}
+    \caption{Image Page}
+    \label{fig:enter-label}
+    \end{figure}
+\noindent When users click the Camera icon or Photo icon, the app either requests camera access or opens the gallery, and once an image is captured or selected, it proceeds to the Identify page or shows an “Access to camera denied” message if permission is blocked.
+
+\subsection{Identify Page}
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rdetectpagemold.png}
+        \caption{Mold detected}
+        \label{fig:mold-detected}
+    \end{minipage}%
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rdetectpagenomold.png}
+        \caption{No mold detected}
+        \label{fig:no-mold}
+    \end{minipage}
+\end{figure}
+\noindent When users take or upload a photo, the Identify page processes the image by sending it to the backend through a secured API request. The backend loads the ONNX-based YOLO detection model, runs inference on the image, and returns a structured JSON response containing the prediction result. The Identify page then interprets this response and displays the appropriate outcome such as a mold detected alert or a safe message. At the same time, the system automatically stores the image URL, detection name, timestamp, and model output in Firestore, ensuring that every analysis is recorded and can be accessed later through the History page.
+
+\subsection{Chatbot Page}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\columnwidth]{Images/Rchatbot.png}
+    \caption{Chatbot page}
+    \label{fig:enter-label}
+    \end{figure}
+\noindent The Chatbot page allows users to interact with Gom, an AI-powered assistant designed to answer questions about mold detection, prevention, and cleaning. When a user submits a message, the app sends the query to the backend, which forwards it to the OpenAI API for natural language processing. The API generates an appropriate response based on the user’s input, and the backend returns this message to the app, where it is displayed in the chat interface. This creates a real-time conversational experience that helps users understand mold-related issues and receive guidance directly within the application.
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rsettings.png}
+        \caption{Settings page}
+        \label{fig:mold-detected}
+    \end{minipage}%
+    \begin{minipage}{0.35\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Images/Rsettingssuccess.png}
+        \caption{Settings page}
+        \label{fig:no-mold}
+    \end{minipage}
+\end{figure}
+\noindent The Settings page allows users to view and manage their account information, including their username and password, all of which are retrieved from the backend upon login. When a user chooses to update their username or password, the app opens an edit dialog where the new value can be entered. After the user submits the change, the app sends an update request to the backend, which validates the input and writes the updated data to Firestore. Once the backend confirms a successful update, the app displays a success message and refreshes the account information on the page.
+
+\section{DISCUSSION}
+
+Throughout the development of GomMold, our team faced a wide range of challenges that affected the backend, AI/ML model, and frontend components equally. On the backend side, the most difficult aspect was deploying the server to the cloud. Although our original plan was to use Google Cloud because of our reliance on Firebase, the deployment process quickly became overwhelming. Build times were extremely long, and deployments repeatedly failed with unclear error messages that were buried in long, complex logs. Troubleshooting was especially difficult because GCP relies on many layers of configuration, such as Docker images, service accounts, IAM permissions, and runtime settings. Even after numerous attempts to fix the issues, each redeployment introduced new problems, making the process discouraging and time-consuming. We then shifted to Render, which simplified the interface but created new complications, especially Python version mismatches and model loading failures during the build stage. Render’s requirement to redeploy through GitHub also led to many experimental commits. Eventually, we switched to Railway, which provided faster builds and clearer error logs. However, even Railway required several adjustments, especially with library compatibility and model-loading logic. Integrating the backend with the frontend introduced another layer of work, as API responses and field names had to be aligned precisely to avoid UI errors.\\
+
+The AI/ML component was equally challenging. Collecting a high-quality mold dataset required much more effort than we expected. Online images were limited, copyrighted, or inconsistent in quality, and the photos we took ourselves lacked variety in mold types and lighting conditions. Annotating these images was tedious because mold does not have sharp boundaries, meaning every small patch had to be carefully labeled. Even minor annotation mistakes reduced the model’s accuracy, causing confusion between mold, stains, and shadows. Initially, we planned to classify mold into different colors, but the dataset was too small and inconsistent to train a reliable color-based model. We also considered classifying mold by species or type, but this required expert knowledge and specialized datasets that we did not have access to. After training, the PyTorch model performed well locally but caused deployment errors on multiple cloud platforms. This forced us to convert the model to ONNX, which introduced a new set of challenges. The ONNX model produced different output structures, tensor shapes, and confidence values compared to the PyTorch version. We had to rewrite much of our post-processing code and re-export the model multiple times before the outputs became stable. Integrating the ONNX model with the backend required detailed testing, especially when sending results to the frontend, ensuring that color labels, messages, and analysis names appeared correctly.\\
+
+On the frontend, the team faced both technical and communication-related challenges. Because different members worked on different devices, repository synchronization became a recurring problem. Some cloned versions were outdated, certain pages were missing after pulls, and duplicated folders caused confusion about the latest build. Flutter’s routing system also required careful attention, linking UI buttons to their correct pages and maintaining a smooth navigation flow needed multiple revisions. Ensuring consistent design across devices was another challenge, as Flutter’s layout system reacts differently depending on screen size, which led to spacing issues, misaligned components, and distorted images. The frontend also frequently broke whenever backend API outputs changed. For example, a slight change in the JSON format could cause the history page to display empty results or load incorrect images. Fixing these mismatches required constant communication and collaboration between frontend and backend members.\\
+
+Overall, the combination of backend deployment issues, AI model preprocessing difficulties, and frontend synchronization problems made this project a complex but meaningful learning experience. Despite the challenges, the project helped us build confidence in cloud deployment, dataset preparation, machine-learning integration, version control, and cross-team communication. Since this was our first large-scale development project, much of our time was spent learning by doing, which naturally led to mistakes but also to significant growth. Moving forward, we plan to adopt clearer communication methods, establish a more structured Git workflow, and perform regular code reviews to ensure smoother integration. These improvements will help us work more efficiently in future projects and avoid many of the issues we encountered during GomMold’s development.
+
+
 
 \begin{thebibliography}{00}
-\bibitem{b1} Alvi, F. (2025, January 17). Why you need to start learning opencv in 2025!. OpenCV. https://opencv.org/blog/learning-opencv/
-\bibitem{b2} Bergmann, D. (2025, October 23). What is machine learning?. IBM. https://www.ibm.com/think/topics/machine-learning
-\bibitem{b3} Bergmann, D., & Stryker, C. (2025, October 20). What is pytorch?. IBM. https://www.ibm.com/think/topics/pytorch
-\bibitem{b4} Build apps for any screen. Flutter. (n.d.). https://flutter.dev/
-\bibitem{b5} Fox, L. (2023, September 17). Why should you use Flask Framework for web development? Medium. https://medium.com/@lauren-fox/why-should-you-use-flask-framework-for-web-development-f5a7233e17a6
-\bibitem{b6} Flutter architectural overview. Flutter. (n.d.-b). https://docs.flutter.dev/resources/architectural-overview
-\bibitem{b7} Gillis, A. S. (2025, June 11). What is macos? - definition from whatis.com. WhatIs. https://www.techtarget.com/whatis/definition/Mac-OS
-\bibitem{b8} Google. (n.d.-a). Google cloud overview | get started. https://cloud.google.com/docs/overview
-\bibitem{b9} Google. (n.d.-b). Firebase. Google. https://firebase.google.com/
-\bibitem{b10} Google. (n.d.). Add the firebase admin SDK to your server. Google. https://firebase.google.com/docs/admin/setup
-\bibitem{b11} Holcombe, J. (2025, August 28). What is github? A beginner’s introduction to github. Kinsta®. https://kinsta.com/blog/what-is-github/
-\bibitem{b12} Hồng, H. N. (2025, May 26). What is openai? everything you need to know (2025 guide). Expert Software Development | Kaopiz Holdings. https://kaopiz.com/en/articles/what-is-openai/
-\bibitem{b13} Hot reload. Flutter. (n.d.-c). https://docs.flutter.dev/tools/hot-reload
-\bibitem{b14} Khan, S. (2025, October 17). Dart programming language: Top features and applications. Xavor Corporation. https://www.xavor.com/blog/dart-programming-language-features-and-applications/
-\bibitem{b15} Microsoft. (2021, November 3). Visual studio code - code editing. redefined. RSS. https://code.visualstudio.com/
-\bibitem{b16} Nguyen, A. (2025, May 5). Flask Framework: Why developers love it for web projects. Stepmedia Software. https://stepmediasoftware.com/blog/what-is-flask-used-for/
-\bibitem{b17} Notion. (n.d.). The all-in-one workspace for your notes, tasks, wikis, and databases. https://www.notion.so/index.html
-\bibitem{b18} Notion. (n.d.-a). The AI workspace that works for you. https://www.notion.so/notion/What-s-New-157765353f2c4705bd45474e5ba8b46c
-\bibitem{b19} OpenCV: Essential library for real-time AI Vision. viso.ai. (n.d.). https://viso.ai/computer-vision/opencv/
-\bibitem{b20} OpenCV tutorial: Unlock the power of Visual Data Processing | DataCamp. (n.d.-a). https://www.datacamp.com/tutorial/opencv-tutorial
-\bibitem{b21} Overleaf, online latex editor. Overleaf, Online LaTeX Editor. (n.d.). https://www.overleaf.com/
-\bibitem{b22} Patel, B., & Written by Bhaval Patel Bhaval Patel is a Director (Operations) at Space-O Technologies. He has 20+ years of experience helping startups and enterprises with custom software solutions to drive maximum results. Under his leadership. (2025, May 29). Top 10 benefits of using openai in web app development. Homepage. https://www.spaceotechnologies.com/blog/benefits-of-using-openai-web-app-development/
-\bibitem{b23}Postman. (n.d.). The world’s leading API platform. https://www.postman.com/ 
-\bibitem{b24} Pytorch. PyTorch. (n.d.). https://pytorch.org/
-\bibitem{b25} Safi, A. (n.d.). Understanding baas: A deep dive into Firebase vs. Supabase: Abdulkader Safi. Abdulkader Safi Profile Picture. https://abdulkadersafi.com/blog/understanding-baas-a-deep-dive-into-firebase-vs-supabase
-\bibitem{b26} Stevens, E. (2025, August 14). What is Figma - uses, benefits, and features. AND Academy. https://www.andacademy.com/resources/blog/graphic-design/what-is-figma/#:~:text=Dev%20Mode%3A%20A%20workspace%20to,to%20co%2Dcreate%20slide%20decks.
-\bibitem{b27} Team, B. E. (2021, September 9). An overview of firebase baas. Back4App Blog. https://blog.back4app.com/backend-as-a-service-firebase/
-\bibitem{b28} Top 10 benefits of using openai for web app development. (n.d.). https://arccusinc.com/blog/10-important-benefits-of-using-openai-in-web-app-development/
-\bibitem{b29} Welcome to flask¶. Welcome to Flask - Flask Documentation (3.1.x). (n.d.). https://flask.palletsprojects.com/en/stable/
-\bibitem{b30} What is macos? features, Benefits & Latest Version. ITarian Blog. (n.d.). https://www.itarian.com/blog/what-is-mac-os/
-\bibitem{b31} What is python? executive summary. Python.org. (n.d.). https://www.python.org/doc/essays/blurb/
-\bibitem{b32} What is windows?. What is Windows? | Digital Unite. (n.d.). https://www.digitalunite.com/technology-guides/computer-essentials/windows-10/what-windows
-\bibitem{b33} Windows operating system: Research starters: EBSCO research. (n.d.). https://www.ebsco.com/research-starters/computer-science/windows-operating-system
+
+\bibitem{b1} 
+App Store. (n.d.). Mould Identifier \& AI Scanner App. https://apps.apple.com/kr/app/mould-identifier-ai-scanner/id6743941888?l=en-GB
+
+\bibitem{b2} 
+App Store. (n.d.). Mold Finder AI, Inspection App. https://apps.apple.com/kr/app/mold-finder-ai-inspection/id6689505239?l=en-GB
+
+\bibitem{b3} 
+AND Academy. Stevens, E. (2025, August 14). What is Figma – uses, benefits, and features. https://www.andacademy.com/resources/blog/graphic-design/what-is-figma/
+
+\bibitem{b4} 
+Back4App Blog. Team, B. E. (2021, September 9). An overview of Firebase BaaS. https://blog.back4app.com/backend-as-a-service-firebase/
+
+\bibitem{b5} 
+Bergmann, D. (2025, October 23). What is machine learning? IBM. https://www.ibm.com/think/topics/machine-learning
+
+\bibitem{b6} 
+Bergmann, D., \& Stryker, C. (2025, October 20). What is PyTorch? IBM. https://www.ibm.com/think/topics/pytorch
+
+\bibitem{b7} 
+Build apps for any screen. Flutter. (n.d.). https://flutter.dev/
+
+\bibitem{b8} 
+Dart Programming Language: Top features and applications. Khan, S. (2025, October 17). Xavor Corporation. https://www.xavor.com/blog/dart-programming-language-features-and-applications/
+
+\bibitem{b9} 
+EBSCO Research Starters. (n.d.). Windows operating system. https://www.ebsco.com/research-starters/computer-science/windows-operating-system
+
+\bibitem{b10} 
+Expert Software Development | Kaopiz Holdings. Hồng, H. N. (2025, May 26). What is OpenAI? https://kaopiz.com/en/articles/what-is-openai/
+
+\bibitem{b11} 
+Firebase. Google. (n.d.). https://firebase.google.com/
+
+\bibitem{b12} 
+Flutter Architectural Overview. Flutter Docs. (n.d.-b). https://docs.flutter.dev/resources/architectural-overview
+
+\bibitem{b13} 
+Flask Documentation. Welcome to Flask (3.1.x). https://flask.palletsprojects.com/en/stable/
+
+\bibitem{b14} 
+Fox, L. (2023, September 17). Why should you use Flask Framework for web development? Medium. https://medium.com/@lauren-fox/why-should-you-use-flask-framework-for-web-development-f5a7233e17a6
+
+\bibitem{b15} 
+GitHub Introduction. Holcombe, J. (2025, August 28). Kinsta. https://kinsta.com/blog/what-is-github/
+
+\bibitem{b16} 
+Google Cloud Overview. Google. (n.d.-a). https://cloud.google.com/docs/overview
+
+\bibitem{b17} 
+Google. (n.d.). Add the Firebase Admin SDK to your server. https://firebase.google.com/docs/admin/setup
+
+\bibitem{b18} 
+Hot Reload. Flutter Docs. (n.d.-c). https://docs.flutter.dev/tools/hot-reload
+
+\bibitem{b19} 
+IBM. Gillis, A. S. (2025, June 11). What is macOS? WhatIs. https://www.techtarget.com/whatis/definition/Mac-OS
+
+\bibitem{b20} 
+ITarian Blog. (n.d.). What is macOS? Features, Benefits \& Latest Version. https://www.itarian.com/blog/what-is-mac-os/
+
+\bibitem{b21} 
+Kaopiz. Hồng, H. N. (2025, May 26). What is OpenAI? https://kaopiz.com/en/articles/what-is-openai/
+
+\bibitem{b22} 
+Microsoft. (2021, November 3). Visual Studio Code – Code editing, redefined. https://code.visualstudio.com/
+
+\bibitem{b23} 
+Mold Detection Dataset. Roboflow Universe. https://universe.roboflow.com/dissertationproject/mould-detection-aaron
+
+\bibitem{b24} 
+Mold Identifier: AI Scan App. Worlitzer, M. (n.d.). App Store. https://apps.apple.com/kr/app/mold-identifier-ai-scan/id6749549375?l=en-GB
+
+\bibitem{b25} 
+MoldAI App. Y. P. C. Limited. (n.d.). App Store. https://apps.apple.com/kr/app/moldai/id6689520833?l=en-GB
+
+\bibitem{b26} 
+Nguyen, A. (2025, May 5). Flask Framework: Why developers love it for web projects. Stepmedia Software. https://stepmediasoftware.com/blog/what-is-flask-used-for/
+
+\bibitem{b27} 
+Notion. (n.d.). The all-in-one workspace for your notes, tasks, wikis, and databases. https://www.notion.so/index.html
+
+\bibitem{b28} 
+Notion AI Workspace. (n.d.-a). https://www.notion.so/notion/What-s-New-157765353f2c4705bd45474e5ba8b46c
+
+\bibitem{b29} 
+Overleaf, Online LaTeX Editor. (n.d.). https://www.overleaf.com/
+
+\bibitem{b30} 
+Patel, B. (2025, May 29). Top 10 benefits of using OpenAI in web app development. Space-O Technologies. https://www.spaceotechnologies.com/blog/benefits-of-using-openai-web-app-development/
+
+\bibitem{b31} 
+Postman. (n.d.). The world’s leading API platform. https://www.postman.com/
+
+\bibitem{b32} 
+PyTorch. (n.d.). https://pytorch.org/
+
+\bibitem{b33} 
+Python.org. (n.d.). What is Python? https://www.python.org/doc/essays/blurb/
+
+\bibitem{b34} 
+Railway Docs. (n.d.). https://docs.railway.com/
+
+\bibitem{b35} 
+Roboflow Universe. Wall Computer Vision Dataset. https://universe.roboflow.com/jisupark/wall-yqazk
+
+\bibitem{b36} 
+Safi, A. (n.d.). Understanding BaaS: Firebase vs. Supabase. https://abdulkadersafi.com/blog/understanding-baas-a-deep-dive-into-firebase-vs-supabase
+
+\bibitem{b37} 
+Ultralytics YOLO Docs. (2025, November 23). https://docs.ultralytics.com/
+
+\bibitem{b38} 
+Windows. Digital Unite. https://www.digitalunite.com/technology-guides/computer-essentials/windows-10/what-windows
+
 \end{thebibliography}
+
+
+
 \vspace{12pt}
+
 
 \end{document}
